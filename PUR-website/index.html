@@ -1,0 +1,1353 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PUR Réflexe — Le spray détachant textile premium made in France. Élimine les taches sur vêtements, sièges auto et tissus délicats. Formule concentrée 150 ml. Livraison FR/BE/CH/LU." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://purreflexe.fr/" />
+  <meta property="og:title" content="PUR Réflexe — Détachant Textile Premium" />
+  <meta property="og:description" content="Le spray détachant textile premium made in France. Élimine les taches sur vêtements, sièges auto et tissus délicats. Formule concentrée 150 ml." />
+  <meta property="og:url" content="https://purreflexe.fr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Détachant Textile Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --or:         #D8B38A;
+      --or-light:   #e8c9a0;
+      --or-dim:     #2a2015;
+      --bg:         #12110e;
+      --bg-alt:     #17160d;
+      --card:       #1d1c16;
+      --border:     rgba(255,255,255,0.07);
+      --border-or:  rgba(216,179,138,0.25);
+      --text:       #F3EEE7;
+      --text-muted: #8a7e6e;
+      --sable:      #DCCFC1;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(18,17,14,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,0.5); }
+
+    .nav-logo { text-decoration: none; display: flex; align-items: center; transition: opacity .2s; }
+    .nav-logo:hover { opacity: .8; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: .82rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--or-light); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--or);
+      color: #12110e;
+      padding: .6rem 1.4rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .04em;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+    .nav-cta:hover { background: var(--or-light); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 4rem 4rem;
+      background:
+        radial-gradient(ellipse 55% 65% at 68% 50%, rgba(216,179,138,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 35% 45% at 20% 30%, rgba(216,179,138,0.05) 0%, transparent 60%),
+        var(--bg);
+      position: relative; overflow: hidden;
+    }
+
+    .hero-mark {
+      position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+      width: 520px; height: 520px; opacity: 0.04; pointer-events: none; z-index: 0;
+    }
+    .hero-mark svg { width: 100%; height: 100%; }
+
+    .hero-content { max-width: 560px; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(216,179,138,0.12);
+      color: var(--or);
+      border: 1px solid rgba(216,179,138,0.3);
+      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .4rem 1rem; border-radius: 100px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-badge::before { content: '✦'; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+      font-weight: 700; line-height: 1.05;
+      color: #fff; margin-bottom: .6rem;
+    }
+    .hero h1 .accent { color: var(--or); font-weight: 300; font-style: italic; }
+
+    .hero-sub {
+      font-size: 1.15rem; font-weight: 300; font-style: italic;
+      color: var(--sable);
+      margin: .4rem 0 .6rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-tagline {
+      font-size: 1rem; color: var(--text-muted); font-weight: 300;
+      margin: 1.2rem 0 2.8rem; line-height: 1.85; max-width: 440px;
+    }
+
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--or); color: #12110e;
+      padding: 1rem 2.4rem; border-radius: 100px;
+      font-weight: 700; font-size: .9rem; letter-spacing: .04em;
+      text-decoration: none;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      box-shadow: 0 4px 28px rgba(216,179,138,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--or-light); transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(216,179,138,0.45);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: transparent; color: var(--text);
+      padding: 1rem 2.2rem; border-radius: 100px;
+      font-weight: 500; font-size: .9rem; letter-spacing: .04em;
+      text-decoration: none;
+      border: 1.5px solid var(--border);
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--or); color: var(--or-light); }
+
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .product-photo {
+      height: 640px; width: auto; object-fit: contain;
+      animation: floatY 5s ease-in-out infinite;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+    }
+    .bottle-glow {
+      position: absolute; bottom: -20px; width: 260px; height: 30px;
+      background: radial-gradient(ellipse, rgba(216,179,138,0.15) 0%, transparent 70%);
+      border-radius: 50%; filter: blur(16px);
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    /* ─── STATS / KPI ─── */
+    .stats {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-item { padding: 3rem 2rem; text-align: center; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 700;
+      color: var(--or); display: block; line-height: 1;
+    }
+    .stat-label {
+      font-size: .82rem; color: var(--text-muted);
+      margin-top: .5rem; letter-spacing: .08em; text-transform: uppercase;
+    }
+
+    /* ─── SECTIONS commons ─── */
+    section { padding: 6rem 4rem; }
+
+    .section-label {
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--or); margin-bottom: .8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 1.2rem; color: #fff;
+    }
+    .section-desc {
+      font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; max-width: 560px;
+    }
+
+    /* ─── OFFRES ─── */
+    .offres { background: var(--bg); }
+    .offres-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .offre-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; gap: 1.2rem;
+      position: relative; transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .offre-card:hover { transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0,0,0,0.4); }
+    .offre-card.featured {
+      border-color: var(--border-or);
+      background: linear-gradient(145deg, #22201a 0%, #1d1c16 100%);
+    }
+    .offre-card.featured:hover { box-shadow: 0 24px 56px rgba(216,179,138,0.15); }
+
+    .offre-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: .3rem .9rem; border-radius: 100px;
+      width: fit-content;
+    }
+    .badge-decouverte {
+      background: rgba(255,255,255,0.06); color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .badge-choisi {
+      background: rgba(216,179,138,0.15); color: var(--or);
+      border: 1px solid rgba(216,179,138,0.3);
+    }
+    .badge-economie {
+      background: rgba(255,255,255,0.06); color: var(--sable);
+      border: 1px solid rgba(220,207,193,0.2);
+    }
+
+    .offre-bottles {
+      display: flex; justify-content: center; align-items: flex-end;
+      gap: -8px; margin: .5rem 0 .2rem;
+    }
+    .offre-bottle {
+      height: 100px; width: auto; object-fit: contain;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.5));
+      margin: 0 -6px;
+    }
+    .offre-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700; color: #fff;
+    }
+    .offre-price {
+      font-size: 2.4rem; font-weight: 700; color: var(--or);
+      font-family: 'Playfair Display', serif; line-height: 1;
+    }
+    .offre-price small { font-size: .9rem; color: var(--text-muted); font-weight: 400; font-family: 'Inter', sans-serif; }
+    .offre-copy { font-size: .88rem; color: var(--text-muted); line-height: 1.7; }
+    .offre-livraison {
+      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
+      color: var(--or); display: flex; align-items: center; gap: .4rem;
+    }
+    .offre-livraison.muted { color: var(--text-muted); }
+
+    .btn-offre {
+      display: block; width: 100%; text-align: center; cursor: pointer;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--text); padding: .9rem; border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600; font-size: .88rem; letter-spacing: .03em;
+      transition: background .2s, border-color .2s, color .2s, opacity .2s;
+      margin-top: auto;
+    }
+    .btn-offre:hover { border-color: var(--or); color: var(--or); }
+    .btn-offre.featured {
+      background: var(--or); color: #12110e;
+      border-color: var(--or);
+      box-shadow: 0 4px 20px rgba(216,179,138,0.35);
+    }
+    .btn-offre.featured:hover { background: var(--or-light); }
+
+    /* ─── AVIS CLIENTS ─── */
+    .avis { background: var(--bg); border-top: 1px solid var(--border); padding: 6rem 4rem; }
+    .avis-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem; margin-top: 3rem;
+    }
+    .avis-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2rem 1.8rem;
+      display: flex; flex-direction: column; gap: 1.2rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .avis-card:hover { border-color: rgba(216,179,138,0.45); transform: translateY(-4px); }
+    .avis-stars { color: var(--or); font-size: 1rem; letter-spacing: .1em; }
+    .avis-text {
+      font-size: .9rem; color: var(--text-muted); line-height: 1.75;
+      font-style: italic; flex: 1;
+    }
+    .avis-author { display: flex; align-items: center; gap: .9rem; margin-top: auto; }
+    .avis-avatar {
+      width: 38px; height: 38px; min-width: 38px; border-radius: 50%;
+      background: var(--or-dim); border: 1.5px solid rgba(216,179,138,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--or-light);
+    }
+    .avis-name { font-weight: 600; font-size: .88rem; color: var(--text); }
+    .avis-ctx { font-size: .76rem; color: var(--text-muted); margin-top: .1rem; }
+    .avis-trust {
+      display: flex; align-items: center; gap: .5rem; justify-content: center;
+      margin-top: 2.5rem; font-size: .78rem; color: var(--text-muted);
+    }
+
+    /* ─── AVANT / APRÈS ─── */
+    .avant-apres { background: var(--bg-alt); border-top: 1px solid var(--border); }
+    .aa-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.2rem; margin-top: 3rem;
+    }
+    .aa-item {
+      position: relative; overflow: hidden; border-radius: 18px;
+      background: var(--card); border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .aa-item .zoom-image {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .aa-item:hover .zoom-image { transform: scale(1.08); }
+    .aa-label {
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(18,17,14,0.85); backdrop-filter: blur(8px);
+      color: #fff; padding: .3rem .8rem;
+      border-radius: 100px; font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; z-index: 2;
+    }
+    .aa-label.apres { background: rgba(216,179,138,0.9); color: #12110e; }
+    .aa-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 1.4rem;
+      background: linear-gradient(to top, rgba(18,17,14,0.9) 0%, transparent 100%);
+      font-size: .82rem; color: var(--text);
+      font-weight: 500; z-index: 2;
+    }
+    .aa-placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 1rem; padding: 2rem; text-align: center;
+    }
+    .aa-placeholder p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    .aa-loupe-hint {
+      position: absolute; bottom: 48px; right: 14px; z-index: 3;
+      display: flex; align-items: center; gap: 5px;
+      font-size: .68rem; color: rgba(216,179,138,0.85);
+      background: rgba(18,17,14,0.78); backdrop-filter: blur(6px);
+      padding: .28rem .7rem; border-radius: 100px;
+      pointer-events: none; transition: opacity .25s;
+      border: 1px solid rgba(216,179,138,0.2);
+    }
+    .magnifiable:hover .aa-loupe-hint,
+    .magnifiable.touching .aa-loupe-hint { opacity: 0; }
+
+    .magnifier-lens {
+      position: absolute;
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      border: 2px solid rgba(216,179,138,0.55);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 6px 24px rgba(0,0,0,0.7);
+      pointer-events: none;
+      z-index: 10;
+      display: none;
+      background-repeat: no-repeat;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ─── DESCRIPTION "Pourquoi PUR Réflexe" ─── */
+    .description {
+      background: var(--bg);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .desc-features { display: flex; flex-direction: column; gap: 1.2rem; }
+    .feature-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.4rem 1.6rem;
+      display: flex; align-items: flex-start; gap: 1.2rem;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .feature-card:hover {
+      transform: translateX(6px); border-color: var(--border-or);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .feature-icon {
+      width: 48px; min-width: 48px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-text h4 { font-weight: 600; font-size: .95rem; margin-bottom: .3rem; color: var(--text); }
+    .feature-text p  { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── APPLICATIONS ─── */
+    .applications { background: var(--bg-alt); }
+    .apps-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem; margin-top: 3rem;
+    }
+    .app-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.5rem 1.5rem;
+      text-align: center;
+      transition: background .25s, transform .2s, border-color .25s, box-shadow .25s;
+      cursor: default; text-decoration: none;
+      display: block;
+    }
+    .app-card:hover {
+      background: var(--or-dim); border-color: var(--border-or);
+      transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+    }
+    .app-icon { display: flex; align-items: center; justify-content: center; height: 56px; margin-bottom: 1rem; }
+    .app-name { font-weight: 600; font-size: .95rem; margin-bottom: .4rem; color: var(--text); }
+    .app-note { font-size: .78rem; color: var(--text-muted); }
+    .app-card.note-card { position: relative; padding-bottom: 2.8rem; }
+    .app-card.note-card::after {
+      content: 'Tester au préalable';
+      position: absolute; bottom: .9rem; left: 50%; transform: translateX(-50%);
+      font-size: .68rem; color: var(--or); font-weight: 500; white-space: nowrap;
+    }
+
+    /* ─── MODE D'EMPLOI ─── */
+    .instructions {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 3rem; }
+    .step { position: relative; padding: 2rem 1.2rem; text-align: center; }
+    .step::after {
+      content: '→'; position: absolute; right: -14px; top: 2.2rem;
+      font-size: 1.2rem; color: var(--or); opacity: .3;
+    }
+    .step:last-child::after { display: none; }
+    .step-num {
+      width: 48px; height: 48px; background: var(--or-dim);
+      border: 1px solid var(--border-or);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--or); margin: 0 auto 1.2rem;
+    }
+    .step-icon { display: flex; align-items: center; justify-content: center; height: 36px; margin-bottom: .8rem; }
+    .step-text { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--bg-alt); border-top: 1px solid var(--border); }
+    .faq-list { display: flex; flex-direction: column; gap: .8rem; margin-top: 3rem; max-width: 780px; margin-left: auto; margin-right: auto; }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item:hover { border-color: var(--border-or); }
+    .faq-q {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 1.3rem 1.6rem; cursor: pointer;
+      background: none; border: none; text-align: left;
+      font-size: .95rem; font-weight: 600; color: var(--text);
+      font-family: 'Inter', sans-serif;
+      gap: 1rem;
+    }
+    .faq-q .chevron {
+      min-width: 20px; color: var(--or); transition: transform .3s;
+    }
+    .faq-item.open .chevron { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 1.6rem;
+    }
+    .faq-a p { font-size: .9rem; color: var(--text-muted); line-height: 1.8; padding-bottom: 1.3rem; }
+    .faq-item.open .faq-a { max-height: 200px; }
+
+    /* ─── PRÉCAUTIONS ─── */
+    .precautions { background: var(--bg); }
+    .precautions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
+    .precaution-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.4rem 1.6rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color .2s;
+    }
+    .precaution-item:hover { border-color: var(--border-or); }
+    .prec-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: rgba(216,179,138,0.1); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .prec-text { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── CTA FINAL ─── */
+    .cta-final {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      text-align: center; padding: 8rem 4rem;
+    }
+    .cta-final .section-label { margin: 0 auto 1rem; }
+    .cta-final .section-title { max-width: 700px; margin: 0 auto 1rem; }
+    .cta-final .section-desc { margin: 0 auto 3rem; text-align: center; }
+
+    .reassurance {
+      display: flex; justify-content: center; align-items: center;
+      gap: 2.5rem; margin-bottom: 3rem; flex-wrap: wrap;
+    }
+    .reassurance-item {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .82rem; color: var(--text-muted);
+    }
+    .reassurance-item svg { color: var(--or); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0c0b08;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted); padding: 4rem;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem; margin-bottom: 3rem;
+    }
+    .footer-brand .logo { margin-bottom: 1rem; display: block; }
+    .footer-brand p { font-size: .85rem; line-height: 1.8; max-width: 300px; }
+    .footer-col h5 {
+      color: var(--text); font-size: .82rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .footer-col ul a {
+      text-decoration: none; color: var(--text-muted); font-size: .85rem; transition: color .2s;
+    }
+    .footer-col ul a:hover { color: var(--or-light); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center; font-size: .8rem;
+    }
+    .footer-bottom .made { color: rgba(255,255,255,.18); }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding: 5rem 1.5rem 3rem; display: flex; flex-direction: column; }
+      .hero-visual { order: -1; margin-bottom: 1.5rem; }
+      .product-photo { height: 260px; }
+      .hero-tagline { margin: 1rem auto 2rem; }
+      .hero-cta { justify-content: center; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .stat-item { padding: 1.2rem .5rem; border-right: 1px solid var(--border); border-bottom: none; }
+      .stat-item:last-child { border-right: none; }
+      .stat-num { font-size: 1.5rem; }
+      .stat-label { font-size: .65rem; margin-top: .25rem; }
+      section { padding: 4rem 1.5rem; }
+      .offres-grid { grid-template-columns: 1fr; }
+      .avis { padding: 4rem 1.5rem; }
+      .avis-grid { grid-template-columns: 1fr; }
+      .aa-grid { grid-template-columns: 1fr; }
+      .description { grid-template-columns: 1fr; gap: 2rem; }
+      .apps-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step::after { display: none; }
+      .precautions-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: .8rem; text-align: center; }
+      .cta-final { padding: 5rem 1.5rem; }
+      .reassurance { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#" aria-label="PUR Réflexe">
+      <svg viewBox="0 0 220 52" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="ng" cx="38%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#e8c9a0"/>
+            <stop offset="100%" stop-color="#b8956b"/>
+          </radialGradient>
+        </defs>
+        <circle cx="26" cy="26" r="26" fill="url(#ng)"/>
+        <path d="M26,8 C42,17 43,33 26,47 C9,33 10,17 26,8 Z" fill="white"/>
+        <ellipse cx="20" cy="20" rx="4" ry="6" fill="white" opacity="0.32" transform="rotate(-18,20,20)"/>
+        <text x="64" y="35" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="28" fill="white" letter-spacing="3">PUR</text>
+        <text x="65" y="49" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="8" fill="#D8B38A" letter-spacing="3.2">RÉFLEXE</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#offres">Nos offres</a></li>
+      <li><a href="#pourquoi">Le produit</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#offres" class="nav-cta">Choisir mon offre →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-mark">
+      <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="36" fill="#D8B38A"/>
+        <path d="M36,10 C57,22 58,46 36,64 C14,46 15,22 36,10 Z" fill="white"/>
+      </svg>
+    </div>
+
+    <div class="hero-content reveal">
+      <h1>PUR<br><span class="accent">Réflexe</span></h1>
+      <p class="hero-sub">Le réflexe anti-tache du quotidien.</p>
+      <p class="hero-tagline">
+        Puissant sur les taches. Doux pour les tissus.<br>
+        Traiter la tache dès qu'elle arrive — avant qu'elle ne s'installe.
+      </p>
+      <div class="hero-cta">
+        <a href="#offres" class="btn-primary">Choisir mon offre →</a>
+        <a href="#pourquoi" class="btn-secondary">Découvrir le produit</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div style="position:relative">
+        <img src="flacon%20site%20haut.png" alt="PUR Réflexe — Détachant textile 150ml" class="product-photo"/>
+        <div class="bottle-glow"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- OFFRES -->
+  <section class="offres" id="offres">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 1rem;">
+      <div class="section-label">Nos offres</div>
+      <h2 class="section-title">Choisir mon offre</h2>
+      <p class="section-desc" style="margin:0 auto;">La livraison est offerte dès 2 sprays.</p>
+    </div>
+    <div class="offres-grid">
+      <!-- Essentiel -->
+      <div class="offre-card reveal">
+        <div class="offre-badge badge-decouverte">Découverte</div>
+        <div class="offre-bottles">
+          <img src="flacon%20site%20haut.png" class="offre-bottle" alt="1 flacon PUR Réflexe"/>
+        </div>
+        <div style="text-align:center; font-size:.75rem; color:var(--text-muted); letter-spacing:.08em; text-transform:uppercase; margin-top:-.4rem;">1 flacon</div>
+        <div class="offre-name">Essentiel</div>
+        <div class="offre-price">21,90 <span style="font-size:1.1rem">€</span><br><small>+ 3,99 € de livraison</small></div>
+        <p class="offre-copy">Idéal pour découvrir PUR Réflexe.</p>
+        <div class="offre-livraison muted">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          Livraison 3,99 €
+        </div>
+        <button class="btn-offre" data-price="price_1TTJ0KKdJsUHW9Mrs4H2tAcy">Choisir cette offre</button>
+      </div>
+      <!-- Pack Duo -->
+      <div class="offre-card featured reveal">
+        <div class="offre-badge badge-choisi">✦ Le plus choisi</div>
+        <div class="offre-bottles">
+          <img src="flacon%20pack%20duo.JPG" class="offre-bottle" style="height:120px;margin:0;" alt="Pack Duo — 2 flacons PUR Réflexe"/>
+        </div>
+        <div style="text-align:center; font-size:.75rem; color:var(--or); letter-spacing:.08em; text-transform:uppercase; margin-top:-.4rem;">2 flacons</div>
+        <div class="offre-name">Pack Duo</div>
+        <div class="offre-price">39,90 <span style="font-size:1.1rem">€</span><br><small>Livraison offerte</small></div>
+        <p class="offre-copy">Un à la maison, un en réserve. Offre la plus choisie.</p>
+        <div class="offre-livraison">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          Livraison offerte
+        </div>
+        <button class="btn-offre featured" data-price="price_1TTJ1kKdJsUHW9MrD5NJdhl0">Choisir cette offre</button>
+      </div>
+      <!-- Pack Famille -->
+      <div class="offre-card reveal">
+        <div class="offre-badge badge-economie">Meilleure économie</div>
+        <div class="offre-bottles">
+          <img src="flacon%20pack%20famille.JPG" class="offre-bottle" style="height:120px;margin:0;" alt="Pack Famille — 3 flacons PUR Réflexe"/>
+        </div>
+        <div style="text-align:center; font-size:.75rem; color:var(--text-muted); letter-spacing:.08em; text-transform:uppercase; margin-top:-.4rem;">3 flacons</div>
+        <div class="offre-name">Pack Famille</div>
+        <div class="offre-price">54,90 <span style="font-size:1.1rem">€</span><br><small>Livraison offerte</small></div>
+        <p class="offre-copy">Pour les familles et les textiles du quotidien.</p>
+        <div class="offre-livraison">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          Livraison offerte
+        </div>
+        <button class="btn-offre" data-price="price_1TTJ2qKdJsUHW9MrTC78jgoE">Choisir cette offre</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUE FR -->
+  <div style="text-align:center; padding: 1rem 1.5rem 3rem;">
+    <img src="marque%20fr%20.png" alt="Marque française" style="max-width:320px; width:100%; opacity:.9;"/>
+  </div>
+
+  <!-- AVIS CLIENTS -->
+  <section class="avis" id="avis">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="section-label">Témoignages</div>
+      <h2 class="section-title">Ils l'ont adopté</h2>
+      <p class="section-desc" style="margin:0 auto;">Des vraies taches, des vrais quotidiens, de vrais résultats.</p>
+    </div>
+    <div class="avis-grid">
+
+      <div class="avis-card reveal">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Purée de courgette sur le body de mon fils de 6 mois — j'avais perdu espoir. Deux sprays, 10 secondes d'attente, et c'était parti. Je n'aurais jamais cru que ça marcherait si vite. »</p>
+        <div class="avis-author">
+          <div class="avis-avatar">S</div>
+          <div>
+            <div class="avis-name">Sophie M.</div>
+            <div class="avis-ctx">Maman de 2 enfants · Lyon</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Retour de foot le dimanche, maillot et short couverts de boue et d'herbe. Un passage de PUR Réflexe avant la machine et tout est reparti. Je le glisse maintenant dans mon sac de sport. »</p>
+        <div class="avis-author">
+          <div class="avis-avatar">T</div>
+          <div>
+            <div class="avis-name">Thomas R.</div>
+            <div class="avis-ctx">Footballeur amateur · Rennes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Sauce bœuf bourguignon sur ma chemise blanche juste avant un déjeuner client. Deux minutes dans les toilettes du restaurant avec PUR Réflexe — impeccable. Littéralement sauvé ma réunion. »</p>
+        <div class="avis-author">
+          <div class="avis-avatar">P</div>
+          <div>
+            <div class="avis-name">Pierre-Louis V.</div>
+            <div class="avis-ctx">Directeur commercial · Paris</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Mon fils a renversé du chocolat chaud sur le siège auto. J'avais quelques minutes. PUR Réflexe a tout effacé en un coup. Je le garde dans la boîte à gants en permanence maintenant. »</p>
+        <div class="avis-author">
+          <div class="avis-avatar">A</div>
+          <div>
+            <div class="avis-name">Aurélie D.</div>
+            <div class="avis-ctx">Maman de 3 enfants · Bordeaux</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« En cuisine, les projections sur la veste de travail c'est quotidien. PUR Réflexe avant chaque lavage — les taches de sauce et de gras partent complètement. Mon équipe l'utilise aussi maintenant. »</p>
+        <div class="avis-author">
+          <div class="avis-avatar">M</div>
+          <div>
+            <div class="avis-name">Marc B.</div>
+            <div class="avis-ctx">Chef restaurateur · Marseille</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Gigoteuse bébé avec une tache de carotte bien incrustée, déjà lavée deux fois. Un spray, deux minutes — disparue. Ce produit est un must absolu pour toutes les mamans de nourrissons. »</p>
+        <div class="avis-author">
+          <div class="avis-avatar">E</div>
+          <div>
+            <div class="avis-name">Emma V.</div>
+            <div class="avis-ctx">Maman de jumeaux · Strasbourg</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="avis-trust reveal">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#D8B38A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      <span>Avis vérifiés — collectés auprès de clientes PUR Réflexe</span>
+    </div>
+  </section>
+
+  <!-- AVANT / APRÈS -->
+  <section class="avant-apres" id="avant-apres">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 1rem;">
+      <div class="section-label">La preuve en image</div>
+      <h2 class="section-title">Avant / Après en action</h2>
+      <p class="section-desc" style="margin:0 auto;">Les taches du quotidien ne s'installent plus.</p>
+    </div>
+    <div class="aa-grid">
+      <div class="aa-item magnifiable reveal">
+        <div class="aa-label">AVANT</div>
+        <img src="avant-body.jpg" alt="Body bébé avant traitement PUR Réflexe" class="zoom-image"/>
+        <div class="aa-caption">Body bébé — tache incrustée sur coton</div>
+        <div class="aa-loupe-hint"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg> Survolez pour zoomer</div>
+      </div>
+      <div class="aa-item magnifiable reveal">
+        <div class="aa-label apres">APRÈS</div>
+        <img src="apres-body.jpg" alt="Body bébé après traitement PUR Réflexe" class="zoom-image"/>
+        <div class="aa-caption">Résultat après traitement PUR Réflexe</div>
+        <div class="aa-loupe-hint"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg> Survolez pour zoomer</div>
+      </div>
+      <div class="aa-item magnifiable reveal">
+        <div class="aa-label">AVANT</div>
+        <img src="avant-vetement.jpg" alt="Vêtement avant traitement PUR Réflexe" class="zoom-image"/>
+        <div class="aa-caption">Vêtement — tache sur textile</div>
+        <div class="aa-loupe-hint"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg> Survolez pour zoomer</div>
+      </div>
+      <div class="aa-item magnifiable reveal">
+        <div class="aa-label apres">APRÈS</div>
+        <img src="apres-vetement.jpg" alt="Vêtement après traitement PUR Réflexe" class="zoom-image"/>
+        <div class="aa-caption">Résultat après traitement PUR Réflexe</div>
+        <div class="aa-loupe-hint"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg> Survolez pour zoomer</div>
+      </div>
+      <div class="aa-item magnifiable reveal">
+        <div class="aa-label">AVANT</div>
+        <img src="avant-siege.jpg" alt="Siège sport avant traitement PUR Réflexe" class="zoom-image"/>
+        <div class="aa-caption">Siège sport — tache incrustée sur tissu technique</div>
+        <div class="aa-loupe-hint"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg> Survolez pour zoomer</div>
+      </div>
+      <div class="aa-item magnifiable reveal">
+        <div class="aa-label apres">APRÈS</div>
+        <img src="apres-siege.jpg" alt="Siège sport après traitement PUR Réflexe" class="zoom-image"/>
+        <div class="aa-caption">Résultat après traitement PUR Réflexe</div>
+        <div class="aa-loupe-hint"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg> Survolez pour zoomer</div>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center; margin-top:1.6rem; font-size:.8rem; color:var(--text-muted);">Photos réelles — résultats obtenus sans retouche.</p>
+  </section>
+
+  <!-- POURQUOI PUR RÉFLEXE -->
+  <section class="description" id="pourquoi">
+    <div class="reveal">
+      <div class="section-label">Pourquoi PUR Réflexe ?</div>
+      <h2 class="section-title">Un geste simple,<br>beau et efficace</h2>
+      <p class="section-desc">
+        PUR Réflexe est né d'un besoin simple : arrêter de considérer une tache comme une fatalité.
+        Vaporiser, laisser agir, laver. Un réflexe naturel, à portée de main.
+      </p>
+    </div>
+    <div class="desc-features reveal">
+      <a href="efficacite.html" class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <h4>Détache rapidement <span style="color:var(--or);font-size:.75rem;margin-left:.4rem;">→</span></h4>
+          <p>Agit en quelques secondes sur les taches fraîches — avant qu'elles ne s'incrustent.</p>
+        </div>
+      </a>
+      <a href="fibres.html" class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <h4>Respecte les tissus <span style="color:var(--or);font-size:.75rem;margin-left:.4rem;">→</span></h4>
+          <p>Formule douce qui préserve l'aspect, la texture et les couleurs de vos fibres.</p>
+        </div>
+      </a>
+      <a href="composition.html" class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2v7.31L5 20h14l-5-10.69V2"/>
+            <line x1="8.5" y1="2" x2="15.5" y2="2"/>
+            <path d="M7 16h10"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <h4>Prêt à l'emploi <span style="color:var(--or);font-size:.75rem;margin-left:.4rem;">→</span></h4>
+          <p>Flacon spray 150 ml, prêt à utiliser immédiatement. Pratique, rangé, toujours là.</p>
+        </div>
+      </a>
+      <a href="format.html" class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 9-9s8 3.5 8 7.5c0 2-1 4.5-3 6-2.5 2-4 1.5-7 2.5Z"/>
+            <path d="M4 21l7-7"/>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <h4>Composition simple <span style="color:var(--or);font-size:.75rem;margin-left:.4rem;">→</span></h4>
+          <p>Tensioactifs d'origine végétale, enzymes détachantes. Rien de superflu.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="applications" id="applications">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+      <div class="section-label">Applications</div>
+      <h2 class="section-title">Convient pour</h2>
+      <p class="section-desc" style="margin:0 auto;">Un seul produit pour tous vos textiles du quotidien.</p>
+    </div>
+    <div class="apps-grid">
+      <a href="vetements.html" class="app-card reveal">
+        <span class="app-icon">
+          <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+          </svg>
+        </span>
+        <div class="app-name">Vêtements</div>
+        <div class="app-note">Coton, polyester, lin…</div>
+      </a>
+      <a href="tissus.html" class="app-card reveal">
+        <span class="app-icon">
+          <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 12 12 17 22 12"/>
+            <polyline points="2 17 12 22 22 17"/>
+          </svg>
+        </span>
+        <div class="app-name">Tissus</div>
+        <div class="app-note">Housses, rideaux…</div>
+      </a>
+      <a href="chaussures.html" class="app-card reveal">
+        <span class="app-icon">
+          <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 14c0-3 2-4 4-4h3l2-5h3l.5 5 2.5 2v2H3Z"/>
+            <path d="M3 14v3h18v-3"/>
+            <path d="M8 17v2"/><path d="M16 17v2"/>
+          </svg>
+        </span>
+        <div class="app-name">Chaussures textiles</div>
+        <div class="app-note">Toile, tissu technique…</div>
+      </a>
+      <a href="ameublement.html" class="app-card note-card reveal">
+        <span class="app-icon">
+          <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/>
+            <path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z"/>
+            <path d="M5 18v2"/><path d="M19 18v2"/>
+          </svg>
+        </span>
+        <div class="app-name">Ameublement</div>
+        <div class="app-note">Canapés, coussins…</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- MODE D'EMPLOI -->
+  <section class="instructions" id="instructions">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+      <div class="section-label">Utilisation</div>
+      <h2 class="section-title">Le geste PUR Réflexe</h2>
+      <p class="section-desc" style="margin:0 auto;">Traiter la tache avant lavage — avant qu'elle ne se fixe.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <span class="step-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="4" width="6" height="16" rx="2"/>
+            <path d="M6 8h3"/><path d="M6 12h3"/><path d="M6 16h3"/>
+            <path d="M15 8h3"/><path d="M15 12h3"/><path d="M15 16h3"/>
+          </svg>
+        </span>
+        <p class="step-text">Agiter le flacon avant utilisation</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <span class="step-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            <path d="M8 19v1"/><path d="M8 14v1"/>
+            <path d="M16 19v1"/><path d="M16 14v1"/>
+            <path d="M12 21v1"/><path d="M12 16v1"/>
+          </svg>
+        </span>
+        <p class="step-text">Vaporiser directement sur la tache</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <span class="step-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </span>
+        <p class="step-text">Laisser agir quelques secondes à quelques minutes</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <span class="step-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v0"/>
+            <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/>
+            <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/>
+            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+          </svg>
+        </span>
+        <p class="step-text">Tamponner avec un chiffon propre sans frotter</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">5</div>
+        <span class="step-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+            <path d="M21 3v5h-5"/>
+            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+            <path d="M3 21v-5h5"/>
+          </svg>
+        </span>
+        <p class="step-text">Laver si besoin — répéter si nécessaire</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+      <div class="section-label">Questions fréquentes</div>
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-desc" style="margin:0 auto;">Tout ce qu'il faut savoir avant de se lancer.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          PUR Réflexe fonctionne-t-il sur les taches déjà sèches ?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Le résultat dépend du type de tache, du tissu et du temps écoulé. Pour de meilleurs résultats, traiter avant lavage et avant passage au sèche-linge. Répéter si nécessaire.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Puis-je l'utiliser sur un canapé ?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Oui, sur tissus compatibles. Tester toujours sur une zone discrète avant utilisation, puis tamponner délicatement sans frotter excessivement.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Est-ce adapté aux vêtements bébé ?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>PUR Réflexe peut être utilisé sur les textiles du quotidien. Après traitement, laver toujours le vêtement avant de le remettre à bébé.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Est-ce que ça abîme les tissus ?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>PUR Réflexe est pensé pour les tissus du quotidien. Pour les tissus sensibles, faire toujours un test préalable sur une zone discrète.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Pourquoi choisir le Pack Duo ?
+          <svg class="chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Le Pack Duo permet d'avoir un spray à portée de main et bénéficie de la livraison offerte. C'est notre offre la plus choisie pour adopter le réflexe anti-tache au quotidien.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÉCAUTIONS -->
+  <section class="precautions" id="precautions">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+      <div class="section-label">Sécurité</div>
+      <h2 class="section-title">Précautions d'emploi</h2>
+      <p class="section-desc" style="margin:0 auto;">Pour une utilisation optimale et en toute sécurité.</p>
+    </div>
+    <div class="precautions-grid">
+      <div class="precaution-item reveal">
+        <div class="prec-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <circle cx="12" cy="10" r="2"/>
+            <path d="M9 16c0-1.66 1.34-3 3-3s3 1.34 3 3"/>
+          </svg>
+        </div>
+        <p class="prec-text">Tenir hors de portée des enfants</p>
+      </div>
+      <div class="precaution-item reveal">
+        <div class="prec-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+            <line x1="1" y1="1" x2="23" y2="23"/>
+          </svg>
+        </div>
+        <p class="prec-text">Éviter le contact avec les yeux</p>
+      </div>
+      <div class="precaution-item reveal">
+        <div class="prec-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+            <path d="M9.5 17.5c.5 1 1.5 1.5 2.5 1.5"/>
+          </svg>
+        </div>
+        <p class="prec-text">En cas de contact oculaire, rincer abondamment à l'eau claire</p>
+      </div>
+      <div class="precaution-item reveal">
+        <div class="prec-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <path d="m9 11 2 2 4-4"/>
+          </svg>
+        </div>
+        <p class="prec-text">Tester sur une zone discrète avant utilisation</p>
+      </div>
+      <div class="precaution-item reveal">
+        <div class="prec-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/>
+          </svg>
+        </div>
+        <p class="prec-text">Ne pas ingérer — Usage externe uniquement</p>
+      </div>
+      <div class="precaution-item reveal">
+        <div class="prec-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <p class="prec-text">Conserver à l'abri de la chaleur et du gel</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta-final">
+    <div class="section-label reveal">Rejoindre le réflexe</div>
+    <h2 class="section-title reveal">Prêt à adopter<br>le réflexe anti-tache ?</h2>
+    <p class="section-desc reveal">Rejoignez ceux qui ont adopté le réflexe anti-tache au quotidien.</p>
+
+    <div class="reassurance reveal">
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#D8B38A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        Livraison offerte dès 2 sprays
+      </div>
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#D8B38A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Paiement sécurisé
+      </div>
+      <div class="reassurance-item">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#D8B38A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        Marque française
+      </div>
+    </div>
+
+    <a href="#offres" class="btn-primary reveal" style="font-size:1rem; padding:1.1rem 3rem;">
+      Choisir mon offre →
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg viewBox="0 0 220 52" height="40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="fg" cx="38%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#e8c9a0"/>
+                <stop offset="100%" stop-color="#b8956b"/>
+              </radialGradient>
+            </defs>
+            <circle cx="26" cy="26" r="26" fill="url(#fg)"/>
+            <path d="M26,8 C42,17 43,33 26,47 C9,33 10,17 26,8 Z" fill="white"/>
+            <ellipse cx="20" cy="20" rx="4" ry="6" fill="white" opacity="0.28" transform="rotate(-18,20,20)"/>
+            <text x="64" y="35" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="28" fill="white" letter-spacing="3">PUR</text>
+            <text x="65" y="49" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="8" fill="#D8B38A" letter-spacing="3.2">RÉFLEXE</text>
+          </svg>
+        </div>
+        <p>PUR Réflexe — Détachant textile premium du quotidien. Puissant sur les taches. Doux pour les tissus. Marque française.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Produit</h5>
+        <ul>
+          <li><a href="#pourquoi">Pourquoi PUR Réflexe ?</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#instructions">Mode d'emploi</a></li>
+          <li><a href="#offres">Nos offres</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Informations</h5>
+        <ul>
+          <li><a href="precautions.html">Précautions</a></li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PUR Réflexe. Tous droits réservés. Marque française.</span>
+      <span class="made">France 🇫🇷</span>
+    </div>
+    <div style="text-align:center; padding: .8rem 4rem; background:#0c0b08; border-top: 1px solid rgba(255,255,255,0.04); font-size:.72rem; color:#4a4336; letter-spacing:.06em;">
+      Site conçu et développé par <strong style="color:#6b5a47;"><a href="https://www.webbizzstudio.fr" target="_blank" rel="noopener" style="color:#6b5a47;text-decoration:none;">WebBizz</a></strong>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Magnifier lens pour les photos avant/après
+    document.querySelectorAll('.magnifiable').forEach(item => {
+      const img = item.querySelector('.zoom-image');
+      const lens = document.createElement('div');
+      lens.className = 'magnifier-lens';
+      item.appendChild(lens);
+
+      const ZOOM = 2.8;
+      const HALF = 65; // lens radius
+
+      function applyLens(clientX, clientY) {
+        const rect = item.getBoundingClientRect();
+        let x = clientX - rect.left;
+        let y = clientY - rect.top;
+
+        // Clamp so lens stays inside the item
+        x = Math.max(0, Math.min(x, rect.width));
+        y = Math.max(0, Math.min(y, rect.height));
+
+        lens.style.left = x + 'px';
+        lens.style.top  = y + 'px';
+
+        const bgW = rect.width  * ZOOM;
+        const bgH = rect.height * ZOOM;
+        const bgX = HALF - x * ZOOM;
+        const bgY = HALF - y * ZOOM;
+
+        lens.style.backgroundImage    = `url('${img.src}')`;
+        lens.style.backgroundSize     = `${bgW}px ${bgH}px`;
+        lens.style.backgroundPosition = `${bgX}px ${bgY}px`;
+        lens.style.display = 'block';
+      }
+
+      item.addEventListener('mousemove', e => applyLens(e.clientX, e.clientY));
+      item.addEventListener('mouseleave', () => { lens.style.display = 'none'; });
+
+      item.addEventListener('touchstart', () => item.classList.add('touching'), { passive: true });
+      item.addEventListener('touchmove', e => {
+        e.preventDefault();
+        applyLens(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: false });
+      item.addEventListener('touchend', () => {
+        lens.style.display = 'none';
+        item.classList.remove('touching');
+      });
+    });
+
+    // Réactive les boutons si l'utilisateur revient en arrière depuis Stripe
+    window.addEventListener('pageshow', () => {
+      document.querySelectorAll('.btn-offre[data-price]').forEach(btn => {
+        btn.disabled = false;
+        btn.textContent = 'Choisir cette offre';
+      });
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    });
+
+    // Stripe Checkout
+    document.querySelectorAll('.btn-offre[data-price]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        btn.textContent = 'Redirection…';
+        try {
+          const res = await fetch('https://jocular-concha-b8dc23.netlify.app/.netlify/functions/create-checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ priceId: btn.dataset.price }),
+          });
+          const data = await res.json();
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            throw new Error(data.error || 'Erreur inconnue');
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'Choisir cette offre';
+          alert('Erreur : ' + err.message);
+        }
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

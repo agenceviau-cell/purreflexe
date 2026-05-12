@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Précautions d'emploi du spray détachant PUR Réflexe — Conseils d'utilisation, compatibilité des fibres et informations de sécurité."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://purreflexe.fr/precautions.html"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Précautions d'emploi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --or:         #D8B38A; --or-light:   #e8c9a0; --or-dim:     #2a2015;
+      --bg:         #12110e; --bg-alt:     #17160d; --card:       #1d1c16;
+      --border: rgba(255,255,255,0.07); --text:       #F3EEE7; --text-muted: #8a7e6e;
+      --or:         #D8B38A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(18,17,14,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; transition: opacity .2s; }
+    .nav-logo:hover { opacity: .8; }
+    .nav-back {
+      display: flex; align-items: center; gap: .5rem;
+      text-decoration: none; color: var(--text-muted);
+      font-size: .82rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--or-light); }
+    .nav-back::before { content: '←'; font-size: 1rem; }
+
+    .hero {
+      min-height: 55vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10rem 4rem 5rem; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse 60% 70% at 80% 30%, rgba(201,168,76,0.08) 0%, transparent 65%), var(--bg);
+    }
+    .hero-bg-text {
+      position: absolute; bottom: -2rem; left: -1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(8rem, 16vw, 16rem); font-weight: 700;
+      color: rgba(216,179,138,0.04); line-height: 1;
+      white-space: nowrap; pointer-events: none; user-select: none;
+    }
+    .hero-label { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--or-light); margin-bottom: 1rem; }
+    .hero-label a { color: var(--text-muted); text-decoration: none; }
+    .hero-label a:hover { color: var(--or-light); }
+    .hero-label span { margin: 0 .5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; color: #fff; max-width: 800px; margin-bottom: 1.5rem; }
+    .hero h1 em { color: var(--or); font-style: normal; }
+    .hero-intro { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; line-height: 1.8; max-width: 600px; }
+
+    .section { padding: 6rem 4rem; }
+    .section-alt { background: var(--bg-alt); }
+    .section-label { font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--or-light); margin-bottom: .8rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 2rem; }
+
+    .prec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+    .prec-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 2rem; display: flex; align-items: flex-start; gap: 1.4rem;
+      transition: border-color .2s;
+    }
+    .prec-card:hover { border-color: rgba(201,168,76,0.3); }
+    .prec-card.danger { border-color: rgba(180,60,60,0.15); }
+    .prec-card.danger:hover { border-color: rgba(180,60,60,0.4); }
+    .prec-icon-box {
+      width: 48px; height: 48px; min-width: 48px; border-radius: 14px;
+      background: rgba(201,168,76,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .prec-icon-box.red { background: rgba(180,60,60,0.1); }
+    .prec-title { font-weight: 600; font-size: .95rem; color: #fff; margin-bottom: .5rem; }
+    .prec-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.7; }
+
+    .urgence-box {
+      background: linear-gradient(135deg, rgba(180,60,60,0.1) 0%, rgba(180,60,60,0.05) 100%);
+      border: 1px solid rgba(180,60,60,0.25); border-radius: 20px;
+      padding: 2.5rem; margin-top: 3rem;
+      display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
+    }
+    .urgence-icon { width: 52px; height: 52px; background: rgba(180,60,60,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+    .urgence-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; margin-bottom: .8rem; }
+    .urgence-text { font-size: .9rem; color: var(--text-muted); line-height: 1.8; }
+    .urgence-tel { font-size: 1.5rem; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; margin-top: .5rem; display: block; }
+
+    .stockage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .stockage-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.8rem 1.5rem; text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .stockage-card:hover { border-color: rgba(216,179,138,0.4); transform: translateY(-3px); }
+    .stockage-icon { display: flex; align-items: center; justify-content: center; height: 48px; margin-bottom: 1rem; }
+    .stockage-name { font-weight: 600; font-size: .9rem; color: #fff; margin-bottom: .4rem; }
+    .stockage-note { font-size: .8rem; color: var(--text-muted); line-height: 1.5; }
+
+    .cta-section {
+      padding: 5rem 4rem; text-align: center;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(216,179,138,0.08) 0%, transparent 70%), var(--bg);
+    }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: #fff; margin-bottom: 1rem; }
+    .cta-section p { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--or); color: #fff; padding: 1rem 2.5rem; border-radius: 100px;
+      font-weight: 600; font-size: .95rem; letter-spacing: .04em; text-decoration: none;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      box-shadow: 0 4px 24px rgba(216,179,138,0.4);
+    }
+    .btn-primary:hover { background: #c9a070; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: transparent; color: var(--text); padding: 1rem 2.5rem; border-radius: 100px;
+      font-weight: 500; font-size: .95rem; text-decoration: none;
+      border: 1.5px solid var(--border); margin-left: 1rem;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--or); color: var(--or-light); }
+
+    .page-footer {
+      background: #0c0b08; border-top: 1px solid var(--border);
+      padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; color: var(--text-muted);
+    }
+    .page-footer a { color: var(--text-muted); text-decoration: none; }
+    .page-footer a:hover { color: var(--or-light); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 8rem 1.5rem 4rem; }
+      .section { padding: 4rem 1.5rem; }
+      .prec-grid { grid-template-columns: 1fr; }
+      .urgence-box { grid-template-columns: 1fr; }
+      .stockage-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 4rem 1.5rem; }
+      .btn-ghost { margin-left: 0; margin-top: .8rem; }
+      .page-footer { flex-direction: column; gap: .6rem; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="PUR FlashClean">
+      <svg viewBox="0 0 196 52" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="ng" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#e8c9a0"/><stop offset="100%" stop-color="#b8956b"/></radialGradient></defs>
+        <circle cx="26" cy="26" r="26" fill="url(#ng)"/>
+        <path d="M26,8 C42,17 43,33 26,47 C9,33 10,17 26,8 Z" fill="white"/>
+        <ellipse cx="20" cy="20" rx="4" ry="6" fill="white" opacity="0.32" transform="rotate(-18,20,20)"/>
+        <text x="62" y="35" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="28" fill="white" letter-spacing="3">PUR</text>
+        <text x="63" y="48" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="8" fill="#D8B38A" letter-spacing="3.2">RÉFLEXE</text>
+      </svg>
+    </a>
+    <a class="nav-back" href="index.html">Accueil</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-text">Sécurité.</div>
+    <div class="hero-label reveal">
+      <a href="index.html">Accueil</a><span>/</span>
+      Précautions d'emploi
+    </div>
+    <h1 class="reveal">Utilisez FlashClean™ <em>en toute sécurité</em></h1>
+    <p class="hero-intro reveal">
+      FlashClean™ est un produit efficace qui contient des agents actifs. Pour une utilisation optimale et sans risque, lisez attentivement ces précautions avant toute application.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="reveal">
+      <div class="section-label">Précautions générales</div>
+      <h2 class="section-title">À respecter à chaque utilisation</h2>
+    </div>
+    <div class="prec-grid">
+      <div class="prec-card reveal">
+        <div class="prec-icon-box">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <circle cx="12" cy="10" r="2"/>
+            <path d="M9 16c0-1.66 1.34-3 3-3s3 1.34 3 3"/>
+          </svg>
+        </div>
+        <div>
+          <div class="prec-title">Tenir hors de portée des enfants</div>
+          <div class="prec-desc">Conservez le flacon hors de la portée et de la vue des enfants. En cas d'ingestion accidentelle, consultez immédiatement un médecin ou contactez le Centre Antipoison.</div>
+        </div>
+      </div>
+      <div class="prec-card reveal">
+        <div class="prec-icon-box">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+            <line x1="1" y1="1" x2="23" y2="23"/>
+          </svg>
+        </div>
+        <div>
+          <div class="prec-title">Éviter tout contact avec les yeux</div>
+          <div class="prec-desc">Ne vaporisez jamais en direction du visage. En cas de contact oculaire accidentel, rincez immédiatement et abondamment à l'eau claire pendant au moins 15 minutes.</div>
+        </div>
+      </div>
+      <div class="prec-card reveal">
+        <div class="prec-icon-box">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <path d="m9 11 2 2 4-4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="prec-title">Tester sur une zone discrète</div>
+          <div class="prec-desc">Avant toute première utilisation sur un tissu, testez sur une couture intérieure ou une zone cachée. Attendez 2 minutes et vérifiez l'absence d'altération de couleur ou de texture.</div>
+        </div>
+      </div>
+      <div class="prec-card reveal">
+        <div class="prec-icon-box">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+            <path d="M9.5 17.5c.5 1 1.5 1.5 2.5 1.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="prec-title">Contact cutané</div>
+          <div class="prec-desc">En cas de contact prolongé avec la peau, lavez à l'eau et au savon. Les personnes à peau sensible peuvent utiliser des gants de protection lors de l'application.</div>
+        </div>
+      </div>
+      <div class="prec-card reveal">
+        <div class="prec-icon-box">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="m4.93 4.93 14.14 14.14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="prec-title">Tissus déconseillés</div>
+          <div class="prec-desc">Ne pas utiliser sur soie, laine délicate, cachemire, cuir véritable ou daim. Ces matières nécessitent un traitement spécialisé. Consultez un professionnel du nettoyage.</div>
+        </div>
+      </div>
+      <div class="prec-card danger reveal">
+        <div class="prec-icon-box red">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#cc7070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"/>
+            <line x1="6" y1="1" x2="6" y2="4"/>
+            <line x1="10" y1="1" x2="10" y2="4"/>
+            <line x1="14" y1="1" x2="14" y2="4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="prec-title">Ne pas ingérer</div>
+          <div class="prec-desc">Usage externe uniquement. Ne pas avaler. En cas d'ingestion accidentelle, ne pas faire vomir — consultez immédiatement un médecin et montrez-lui l'étiquette du produit.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="urgence-box reveal">
+      <div class="urgence-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#cc7070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <div>
+        <div class="urgence-title">En cas d'accident</div>
+        <div class="urgence-text">
+          Pour tout accident ou intoxication, contactez immédiatement le Centre Antipoison le plus proche ou le SAMU. Conservez le flacon pour le montrer aux secours.
+          <span class="urgence-tel">SAMU — 15 &nbsp;·&nbsp; Centre Antipoison — 0 800 59 59 59</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="reveal">
+      <div class="section-label">Conservation</div>
+      <h2 class="section-title">Conditions de stockage recommandées</h2>
+    </div>
+    <div class="stockage-grid">
+      <div class="stockage-card reveal">
+        <div class="stockage-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#D8B38A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+          </svg>
+        </div>
+        <div class="stockage-name">Température ambiante</div>
+        <div class="stockage-note">Conserver entre 5°C et 30°C. Éviter toute exposition à la chaleur intense ou au gel.</div>
+      </div>
+      <div class="stockage-card reveal">
+        <div class="stockage-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#D8B38A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </div>
+        <div class="stockage-name">À l'abri du soleil</div>
+        <div class="stockage-note">Ne pas exposer le flacon à la lumière directe du soleil ou à des sources de chaleur (radiateur, tableau de bord…).</div>
+      </div>
+      <div class="stockage-card reveal">
+        <div class="stockage-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#D8B38A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div class="stockage-name">Flacon bien fermé</div>
+        <div class="stockage-note">Refermez le flacon après chaque utilisation. Conservez-le debout pour éviter toute fuite accidentelle.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="reveal">
+      <div class="section-label" style="display:flex;justify-content:center;">FlashClean™</div>
+      <h2>Des questions sur le produit ?</h2>
+      <p>Notre équipe est disponible pour répondre à toutes vos questions<br>sur la sécurité et l'utilisation de FlashClean™.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">Nous contacter →</a>
+        <a href="index.html" class="btn-ghost">Retour au site</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span>© 2026 PUR Réflexe — FlashClean™</span>
+    <span>
+      <a href="mentions-legales.html">Mentions légales</a> &nbsp;·&nbsp;
+      <a href="contact.html">Contact</a>
+    </span>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+

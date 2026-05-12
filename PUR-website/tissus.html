@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Tissus d'intérieur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --or:         #D8B38A; --or-light:   #e8c9a0; --or-dim:     #2a2015;
+      --bg:         #12110e; --bg-alt:     #17160d; --card:       #1d1c16;
+      --border: rgba(255,255,255,0.07); --text:       #F3EEE7; --text-muted: #8a7e6e;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(18,17,14,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; transition: opacity .2s; }
+    .nav-logo:hover { opacity: .8; }
+    .nav-back {
+      display: flex; align-items: center; gap: .5rem;
+      text-decoration: none; color: var(--text-muted);
+      font-size: .82rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--or-light); }
+    .nav-back::before { content: '←'; font-size: 1rem; }
+
+    .hero {
+      min-height: 70vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10rem 4rem 5rem; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse 70% 80% at 20% 60%, rgba(216,179,138,0.14) 0%, transparent 65%), var(--bg);
+    }
+    .hero-bg-text {
+      position: absolute; bottom: -2rem; left: -1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(8rem, 18vw, 18rem); font-weight: 700;
+      color: rgba(216,179,138,0.04); line-height: 1;
+      white-space: nowrap; pointer-events: none; user-select: none;
+    }
+    .hero-label { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--or-light); margin-bottom: 1rem; }
+    .hero-label a { color: var(--text-muted); text-decoration: none; }
+    .hero-label a:hover { color: var(--or-light); }
+    .hero-label span { margin: 0 .5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; line-height: 1.05; color: #fff; max-width: 800px; margin-bottom: 1.5rem; }
+    .hero h1 em { color: var(--or-light); font-style: normal; }
+    .hero-intro { font-size: 1.15rem; color: var(--text-muted); font-weight: 300; line-height: 1.8; max-width: 600px; }
+
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .kpi { padding: 3rem 2.5rem; border-right: 1px solid var(--border); position: relative; overflow: hidden; }
+    .kpi:last-child { border-right: none; }
+    .kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--or), transparent); }
+    .kpi-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: .4rem; }
+    .kpi-num span { font-size: 1.8rem; color: var(--or-light); }
+    .kpi-label { font-size: .85rem; color: var(--text-muted); line-height: 1.5; }
+
+    .section { padding: 6rem 4rem; }
+    .section-alt { background: var(--bg-alt); }
+    .section-label { font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--or-light); margin-bottom: .8rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 1.2rem; }
+    .section-text { font-size: 1rem; color: var(--text-muted); line-height: 1.85; max-width: 560px; }
+
+    .surfaces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+    .surface-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+      padding: 2.2rem 1.8rem; text-align: center;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .surface-card:hover { border-color: rgba(216,179,138,0.4); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+    .surface-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+    .surface-name { font-weight: 600; font-size: 1rem; color: #fff; margin-bottom: .5rem; }
+    .surface-note { font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
+
+    .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .steps-list { display: flex; flex-direction: column; gap: 0; }
+    .step-item { display: flex; gap: 1.5rem; padding-bottom: 2.5rem; position: relative; }
+    .step-item:last-child { padding-bottom: 0; }
+    .step-item::before {
+      content: ''; position: absolute; left: 19px; top: 44px;
+      width: 2px; bottom: 0;
+      background: linear-gradient(to bottom, var(--or), transparent);
+    }
+    .step-item:last-child::before { display: none; }
+    .step-dot {
+      width: 40px; height: 40px; min-width: 40px; border-radius: 50%;
+      background: var(--or-dim); border: 2px solid var(--or);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-weight: 700; color: var(--or-light);
+      font-size: 1rem; position: relative; z-index: 1;
+    }
+    .step-time {
+      display: inline-block; background: var(--or); color: #fff;
+      font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: .2rem .6rem; border-radius: 100px; margin-bottom: .4rem;
+    }
+    .step-title { font-weight: 600; font-size: .95rem; color: var(--text); margin-bottom: .3rem; }
+    .step-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    .info-card {
+      background: linear-gradient(135deg, #1e3a28 0%, #152a1e 100%);
+      border: 1px solid rgba(216,179,138,0.3); border-radius: 24px; padding: 2.8rem;
+    }
+    .info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #fff; margin-bottom: 1.5rem; }
+    .info-row { display: flex; justify-content: space-between; align-items: center; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: .9rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-row span:first-child { color: var(--text-muted); }
+    .info-row span:last-child { font-weight: 600; color: var(--text); }
+    .info-badge { display: inline-flex; align-items: center; gap: .4rem; background: rgba(216,179,138,0.18); color: var(--or-light); border: 1px solid rgba(216,179,138,0.3); padding: .2rem .7rem; border-radius: 100px; font-size: .75rem; font-weight: 600; }
+
+    .precaution-banner {
+      background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px; padding: 1.8rem 2rem; margin-top: 3rem;
+      display: flex; align-items: flex-start; gap: 1.2rem;
+    }
+    .prec-icon-wrap { width: 40px; height: 40px; min-width: 40px; background: rgba(201,168,76,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .prec-text { font-size: .9rem; color: var(--text-muted); line-height: 1.7; }
+    .prec-text strong { color: #D8B38A; }
+
+    .cta-section {
+      padding: 6rem 4rem; text-align: center;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(216,179,138,0.1) 0%, transparent 70%), var(--bg);
+    }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 1rem; }
+    .cta-section p { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--or); color: #fff; padding: 1rem 2.5rem; border-radius: 100px;
+      font-weight: 600; font-size: .95rem; letter-spacing: .04em; text-decoration: none;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      box-shadow: 0 4px 24px rgba(216,179,138,0.4);
+    }
+    .btn-primary:hover { background: #c9a070; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(216,179,138,0.5); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: transparent; color: var(--text); padding: 1rem 2.5rem; border-radius: 100px;
+      font-weight: 500; font-size: .95rem; letter-spacing: .04em; text-decoration: none;
+      border: 1.5px solid var(--border); margin-left: 1rem;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--or); color: var(--or-light); }
+
+    .page-footer {
+      background: #0c0b08; border-top: 1px solid var(--border);
+      padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; color: var(--text-muted);
+    }
+    .page-footer a { color: var(--text-muted); text-decoration: none; }
+    .page-footer a:hover { color: var(--or-light); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 8rem 1.5rem 4rem; }
+      .section { padding: 4rem 1.5rem; }
+      .kpis { grid-template-columns: 1fr; }
+      .kpi { border-right: none; border-bottom: 1px solid var(--border); }
+      .surfaces-grid { grid-template-columns: 1fr 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .cta-section { padding: 4rem 1.5rem; }
+      .btn-ghost { margin-left: 0; margin-top: .8rem; }
+      .page-footer { flex-direction: column; gap: .6rem; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="PUR FlashClean">
+      <svg viewBox="0 0 196 52" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="ng" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#e8c9a0"/><stop offset="100%" stop-color="#b8956b"/></radialGradient></defs>
+        <circle cx="26" cy="26" r="26" fill="url(#ng)"/>
+        <path d="M26,8 C42,17 43,33 26,47 C9,33 10,17 26,8 Z" fill="white"/>
+        <ellipse cx="20" cy="20" rx="4" ry="6" fill="white" opacity="0.32" transform="rotate(-18,20,20)"/>
+        <text x="62" y="35" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="28" fill="white" letter-spacing="3">PUR</text>
+        <text x="63" y="48" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="8" fill="#D8B38A" letter-spacing="3.2">RÉFLEXE</text>
+      </svg>
+    </a>
+    <a class="nav-back" href="index.html#applications">Applications</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-text">Tissus.</div>
+    <div class="hero-label reveal">
+      <a href="index.html">Accueil</a><span>/</span>
+      <a href="index.html#applications">Applications</a><span>/</span>
+      Tissus d'intérieur
+    </div>
+    <h1 class="reveal">Housses, rideaux &amp; <em>textiles de maison</em></h1>
+    <p class="hero-intro reveal">
+      Pour tous les textiles qui ne passent pas en machine — FlashClean™ traite les taches directement sur place, sans démonter, sans mouiller, sans trace.
+    </p>
+  </section>
+
+  <div class="kpis">
+    <div class="kpi reveal">
+      <div class="kpi-num">0</div>
+      <div class="kpi-label">Rinçage nécessaire<br>après application</div>
+    </div>
+    <div class="kpi reveal">
+      <div class="kpi-num">2<span>min</span></div>
+      <div class="kpi-label">Temps de séchage<br>moyen après traitement</div>
+    </div>
+    <div class="kpi reveal">
+      <div class="kpi-num">0</div>
+      <div class="kpi-label">Trace visible<br>sur tissu clair</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="section-label">Surfaces traitées</div>
+      <h2 class="section-title">Pour chaque textile de votre intérieur</h2>
+      <p class="section-text" style="margin:0 auto;">Un seul produit pour traiter les taches sur l'ensemble de vos textiles d'intérieur — sans démonter, sans machine.</p>
+    </div>
+    <div class="surfaces-grid">
+      <div class="surface-card reveal">
+        <div class="surface-icon">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/>
+            <path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0Z"/>
+            <path d="M5 18v2"/><path d="M19 18v2"/>
+          </svg>
+        </div>
+        <div class="surface-name">Housses de canapé</div>
+        <div class="surface-note">Tissu d'ameublement, velours, microfibre</div>
+      </div>
+      <div class="surface-card reveal">
+        <div class="surface-icon">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3h2v18H3z"/><path d="M19 3h2v18h-2z"/>
+            <path d="M5 5c0 4 4 5 7 5s7-1 7-5"/>
+            <path d="M5 19c0-4 4-5 7-5s7 1 7 5"/>
+          </svg>
+        </div>
+        <div class="surface-name">Rideaux & voilages</div>
+        <div class="surface-note">Tissu de fenêtre, lin, polyester</div>
+      </div>
+      <div class="surface-card reveal">
+        <div class="surface-icon">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            <path d="M12 12v5"/><path d="M9 14h6"/>
+          </svg>
+        </div>
+        <div class="surface-name">Coussins & plaids</div>
+        <div class="surface-note">Décoratifs, canapé, chambre</div>
+      </div>
+      <div class="surface-card reveal">
+        <div class="surface-icon">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h20"/><path d="M4 20V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12"/>
+            <path d="M10 20v-6h4v6"/>
+          </svg>
+        </div>
+        <div class="surface-name">Nappes & chemins</div>
+        <div class="surface-note">Coton, lin, polyester enduit</div>
+      </div>
+      <div class="surface-card reveal">
+        <div class="surface-icon">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h20"/><path d="M2 17h20"/><path d="M2 7h20"/>
+            <path d="M6 3v18"/><path d="M18 3v18"/>
+          </svg>
+        </div>
+        <div class="surface-name">Tapis & moquette</div>
+        <div class="surface-note">Fibres synthétiques, laine (tester avant)</div>
+      </div>
+      <div class="surface-card reveal">
+        <div class="surface-icon">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#D8B38A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+            <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+            <path d="M12 3v6"/>
+          </svg>
+        </div>
+        <div class="surface-name">Têtes de lit</div>
+        <div class="surface-note">Tissu capitonné, velours, lin</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="how-grid">
+      <div class="reveal">
+        <div class="section-label">Méthode in situ</div>
+        <h2 class="section-title">Traiter sans<br>décrocher ni mouiller</h2>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-dot">1</div>
+            <div>
+              <div class="step-time">Étape 1</div>
+              <div class="step-title">Retirer l'excédent</div>
+              <div class="step-desc">Épongez délicatement l'excédent de liquide ou grattez doucement les résidus solides sans étaler la tache.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-dot">2</div>
+            <div>
+              <div class="step-time">Étape 2</div>
+              <div class="step-title">Vaporiser FlashClean™</div>
+              <div class="step-desc">Appliquez directement sur la zone tachée depuis une distance de 10 à 15 cm. Une à deux pressions suffisent.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-dot">3</div>
+            <div>
+              <div class="step-time">Étape 3</div>
+              <div class="step-title">Laisser agir</div>
+              <div class="step-desc">Attendez 15 à 30 secondes. Les enzymes actives pénètrent dans les fibres et décollent les molécules de saleté.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-dot">4</div>
+            <div>
+              <div class="step-time">Étape 4</div>
+              <div class="step-title">Tamponner et laisser sécher</div>
+              <div class="step-desc">Tamponnez avec un chiffon blanc propre depuis l'extérieur de la tache vers l'intérieur. Laissez sécher à l'air libre.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="info-card">
+          <h3>Informations pratiques</h3>
+          <div class="info-row"><span>Application</span><span><span class="info-badge">Sans rinçage</span></span></div>
+          <div class="info-row"><span>Séchage</span><span>2 à 5 minutes à l'air</span></div>
+          <div class="info-row"><span>Laisser agir</span><span>15 — 30 secondes</span></div>
+          <div class="info-row"><span>Répétition possible</span><span>Oui, sans risque</span></div>
+          <div class="info-row"><span>Taches fraîches</span><span>Résultat optimal</span></div>
+          <div class="info-row"><span>Taches incrustées</span><span>2 applications recommandées</span></div>
+        </div>
+        <div class="precaution-banner" style="margin-top:1.5rem;">
+          <div class="prec-icon-wrap">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#D8B38A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="prec-text"><strong>Important :</strong> Testez toujours FlashClean™ sur une zone cachée de votre tissu avant d'appliquer sur une tache visible. Certains textiles de couleur peuvent réagir différemment.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="reveal">
+      <div class="section-label" style="display:flex;justify-content:center;">FlashClean™</div>
+      <h2>La tache est là,<br>FlashClean™ aussi</h2>
+      <p>150 ml, format compact. Sur vos meubles, vos rideaux, vos coussins —<br>sans démonter, sans machine, sans effort.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="index.html#instructions" class="btn-primary">Voir le mode d'emploi →</a>
+        <a href="index.html" class="btn-ghost">Retour au site</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span>© 2026 PUR Réflexe — FlashClean™</span>
+    <span>
+      <a href="index.html#description">Le produit</a> &nbsp;·&nbsp;
+      <a href="index.html#composition">Composition</a> &nbsp;·&nbsp;
+      <a href="index.html#precautions">Précautions</a>
+    </span>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+

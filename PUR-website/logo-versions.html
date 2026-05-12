@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Essais Logo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f4f2;
+      color: #1c1c1c;
+      padding: 3rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: .4rem;
+    }
+    .subtitle { font-size: .85rem; color: #888; margin-bottom: 3rem; letter-spacing: .04em; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    .card-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .5;
+      text-align: center;
+    }
+    .card-note {
+      font-size: .78rem;
+      color: #888;
+      text-align: center;
+      max-width: 220px;
+      line-height: 1.6;
+    }
+
+    /* FOND CLAIR */
+    .bg-light { background: #ffffff; border: 1.5px solid #e8e8e8; }
+    /* FOND SOMBRE */
+    .bg-dark  { background: #1c1c1c; }
+    .bg-dark .card-label { color: #fff; }
+    .bg-dark .card-note  { color: rgba(255,255,255,.45); }
+    /* FOND VERT */
+    .bg-green { background: #D8B38A; }
+    .bg-green .card-label { color: #fff; }
+    .bg-green .card-note  { color: rgba(255,255,255,.5); }
+    /* FOND GRIS */
+    .bg-grey  { background: #f0f0ee; border: 1.5px solid #e4e4e2; }
+    /* FOND NOIR */
+    .bg-black { background: #000; }
+    .bg-black .card-label { color: #fff; }
+    .bg-black .card-note  { color: rgba(255,255,255,.4); }
+    /* FOND KRAFT */
+    .bg-kraft { background: #e8dcc8; border: 1.5px solid #d4c8b0; }
+
+    .section-title {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Essais Logo — PUR FlashClean™</h1>
+  <p class="subtitle">Testez le logo sur différents fonds et en différentes variantes. Dites-moi quelle version vous plaît.</p>
+
+  <!-- ═══════════════════ SECTION 1 : VERSION COULEUR ═══════════════════ -->
+  <div class="section-title">Version couleur — fond clair / sombre / coloré</div>
+  <div class="grid">
+
+    <!-- 1. Couleur sur blanc -->
+    <div class="card bg-light">
+      <div class="card-label">Couleur · Fond blanc</div>
+      <svg viewBox="0 0 280 88" width="240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g1" cx="38%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#e8c9a0"/>
+            <stop offset="100%" stop-color="#b8956b"/>
+          </radialGradient>
+          <filter id="s1"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#D8B38A" flood-opacity="0.28"/></filter>
+        </defs>
+        <g filter="url(#s1)">
+          <circle cx="44" cy="44" r="42" fill="url(#g1)"/>
+          <circle cx="44" cy="44" r="38" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="white"/>
+          <ellipse cx="35" cy="27" rx="5" ry="8" fill="white" opacity="0.3" transform="rotate(-20,35,27)"/>
+          <circle cx="32" cy="20" r="2" fill="white" opacity="0.5"/>
+        </g>
+        <text x="104" y="55" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="46" fill="#1c1c1c" letter-spacing="4">PUR</text>
+        <line x1="104" y1="63" x2="272" y2="63" stroke="#ddd" stroke-width=".8"/>
+        <text x="105" y="76" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="10" fill="#D8B38A" letter-spacing="5">RÉFLEXE</text>
+      </svg>
+      <div class="card-note">Version principale · Utilisation courante sur fond clair</div>
+    </div>
+
+    <!-- 2. Couleur sur fond sombre -->
+    <div class="card bg-dark">
+      <div class="card-label">Couleur · Fond sombre</div>
+      <svg viewBox="0 0 280 88" width="240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g2" cx="38%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#e8c9a0"/>
+            <stop offset="100%" stop-color="#b8956b"/>
+          </radialGradient>
+          <filter id="s2"><feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/></filter>
+        </defs>
+        <g filter="url(#s2)">
+          <circle cx="44" cy="44" r="42" fill="url(#g2)"/>
+          <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="white"/>
+          <ellipse cx="35" cy="27" rx="5" ry="8" fill="white" opacity="0.3" transform="rotate(-20,35,27)"/>
+        </g>
+        <text x="104" y="55" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="46" fill="white" letter-spacing="4">PUR</text>
+        <line x1="104" y1="63" x2="272" y2="63" stroke="rgba(255,255,255,0.15)" stroke-width=".8"/>
+        <text x="105" y="76" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="10" fill="#D8B38A" letter-spacing="5">RÉFLEXE</text>
+      </svg>
+      <div class="card-note">Version site web footer / dark mode</div>
+    </div>
+
+    <!-- 3. Couleur sur fond vert -->
+    <div class="card bg-green">
+      <div class="card-label">Couleur · Fond vert</div>
+      <svg viewBox="0 0 280 88" width="240" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="44" cy="44" r="42" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="44" cy="44" r="42" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="white"/>
+        <ellipse cx="35" cy="27" rx="5" ry="8" fill="white" opacity="0.28" transform="rotate(-20,35,27)"/>
+        <text x="104" y="55" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="46" fill="white" letter-spacing="4">PUR</text>
+        <line x1="104" y1="63" x2="272" y2="63" stroke="rgba(255,255,255,0.2)" stroke-width=".8"/>
+        <text x="105" y="76" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.6)" letter-spacing="5">RÉFLEXE</text>
+      </svg>
+      <div class="card-note">Version packaging / fond coloré</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════ SECTION 2 : NOIR & BLANC ═══════════════════ -->
+  <div class="section-title">Versions Noir &amp; Blanc — monochrome</div>
+  <div class="grid">
+
+    <!-- 4. Noir pur sur blanc -->
+    <div class="card bg-light">
+      <div class="card-label">Noir · Fond blanc</div>
+      <svg viewBox="0 0 280 88" width="240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="s4"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.12"/></filter>
+        </defs>
+        <g filter="url(#s4)">
+          <circle cx="44" cy="44" r="42" fill="#1c1c1c"/>
+          <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="white"/>
+          <ellipse cx="35" cy="27" rx="5" ry="8" fill="white" opacity="0.25" transform="rotate(-20,35,27)"/>
+        </g>
+        <text x="104" y="55" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="46" fill="#1c1c1c" letter-spacing="4">PUR</text>
+        <line x1="104" y1="63" x2="272" y2="63" stroke="#ccc" stroke-width=".8"/>
+        <text x="105" y="76" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="10" fill="#555" letter-spacing="5">RÉFLEXE</text>
+      </svg>
+      <div class="card-note">Impression noir &amp; blanc · Timbre · Tampon</div>
+    </div>
+
+    <!-- 5. Blanc sur noir -->
+    <div class="card bg-black">
+      <div class="card-label">Blanc · Fond noir</div>
+      <svg viewBox="0 0 280 88" width="240" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="44" cy="44" r="42" fill="white"/>
+        <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="#1c1c1c"/>
+        <ellipse cx="35" cy="27" rx="5" ry="8" fill="#555" opacity="0.3" transform="rotate(-20,35,27)"/>
+        <text x="104" y="55" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="46" fill="white" letter-spacing="4">PUR</text>
+        <line x1="104" y1="63" x2="272" y2="63" stroke="rgba(255,255,255,0.2)" stroke-width=".8"/>
+        <text x="105" y="76" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.55)" letter-spacing="5">RÉFLEXE</text>
+      </svg>
+      <div class="card-note">Fond noir · Contraste maximal</div>
+    </div>
+
+    <!-- 6. Outline / contour -->
+    <div class="card bg-grey">
+      <div class="card-label">Outline · Contour</div>
+      <svg viewBox="0 0 280 88" width="240" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="44" cy="44" r="40" fill="none" stroke="#1c1c1c" stroke-width="2.5"/>
+        <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="#1c1c1c"/>
+        <text x="104" y="55" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="46" fill="#1c1c1c" letter-spacing="4">PUR</text>
+        <line x1="104" y1="63" x2="272" y2="63" stroke="#bbb" stroke-width=".8"/>
+        <text x="105" y="76" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="10" fill="#777" letter-spacing="5">RÉFLEXE</text>
+      </svg>
+      <div class="card-note">Gravure · Gaufrage · Sérigraphie</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════ SECTION 3 : MARQUE SEULE ═══════════════════ -->
+  <div class="section-title">Marque seule — icône ronde (favicon, réseaux, packaging)</div>
+  <div class="grid">
+
+    <!-- 7. Mark couleur -->
+    <div class="card bg-light">
+      <div class="card-label">Mark couleur</div>
+      <svg viewBox="0 0 88 88" width="88" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="mg1" cx="38%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#e8c9a0"/>
+            <stop offset="100%" stop-color="#b8956b"/>
+          </radialGradient>
+          <filter id="ms1"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#D8B38A" flood-opacity="0.4"/></filter>
+        </defs>
+        <g filter="url(#ms1)">
+          <circle cx="44" cy="44" r="42" fill="url(#mg1)"/>
+          <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="white"/>
+          <ellipse cx="35" cy="27" rx="5" ry="8" fill="white" opacity="0.35" transform="rotate(-20,35,27)"/>
+          <circle cx="32" cy="20" r="2.2" fill="white" opacity="0.55"/>
+        </g>
+      </svg>
+      <div class="card-note">App icon · Favicon · Tampon packaging</div>
+    </div>
+
+    <!-- 8. Mark noir -->
+    <div class="card bg-light">
+      <div class="card-label">Mark noir</div>
+      <svg viewBox="0 0 88 88" width="88" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="44" cy="44" r="42" fill="#1c1c1c"/>
+        <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="white"/>
+        <ellipse cx="35" cy="27" rx="5" ry="8" fill="white" opacity="0.22" transform="rotate(-20,35,27)"/>
+      </svg>
+      <div class="card-note">Impression 1 couleur · Sérigraphie</div>
+    </div>
+
+    <!-- 9. Mark outline sur fond kraft -->
+    <div class="card bg-kraft">
+      <div class="card-label">Outline · Fond kraft</div>
+      <svg viewBox="0 0 88 88" width="88" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="44" cy="44" r="40" fill="none" stroke="#5a3e1b" stroke-width="2.5"/>
+        <path d="M44,14 C65,26 67,50 44,68 C21,50 23,26 44,14 Z" fill="#5a3e1b"/>
+        <ellipse cx="35" cy="27" rx="5" ry="8" fill="#5a3e1b" opacity="0.3" transform="rotate(-20,35,27)"/>
+      </svg>
+      <div class="card-note">Packaging artisanal · Étiquette naturelle</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════ NOTE DE BAS ═══════════════════ -->
+  <p style="margin-top:2.5rem;font-size:.8rem;color:#aaa;text-align:center;">
+    Dites-moi quelle version vous plaît le plus — je l'intègre définitivement sur le site.
+  </p>
+
+</body>
+</html>
+

@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mentions légales du site PUR Réflexe — Éditeur, hébergeur, propriété intellectuelle et politique de confidentialité conformément à la loi française."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://purreflexe.fr/mentions-legales.html"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Mentions Légales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --or: #D8B38A; --or-light: #e8c9a0; --or-dim: #2a2015;
+      --bg: #12110e; --bg-alt: #17160d; --card: #1d1c16;
+      --border: rgba(255,255,255,0.07); --text: #F3EEE7; --text-muted: #8a7e6e;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(18,17,14,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; transition: opacity .2s; }
+    .nav-logo:hover { opacity: .8; }
+    .nav-back {
+      display: flex; align-items: center; gap: .5rem; text-decoration: none;
+      color: var(--text-muted); font-size: .82rem; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase; transition: color .2s;
+    }
+    .nav-back:hover { color: var(--or-light); }
+    .nav-back::before { content: '←'; font-size: 1rem; }
+
+    .hero {
+      min-height: 40vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10rem 4rem 4rem; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse 60% 70% at 70% 40%, rgba(216,179,138,0.1) 0%, transparent 65%), var(--bg);
+    }
+    .hero-label { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--or-light); margin-bottom: 1rem; }
+    .hero-label a { color: var(--text-muted); text-decoration: none; }
+    .hero-label a:hover { color: var(--or-light); }
+    .hero-label span { margin: 0 .5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 1rem; }
+    .hero-intro { font-size: 1rem; color: var(--text-muted); font-weight: 300; line-height: 1.7; max-width: 560px; }
+
+    /* CONTENU */
+    .content { max-width: 780px; margin: 0 auto; padding: 5rem 4rem 7rem; }
+
+    .ml-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.2rem 2.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .ml-block:last-child { margin-bottom: 0; }
+    .ml-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; color: #fff;
+      margin-bottom: 1.2rem;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .ml-block h2 svg { flex-shrink: 0; }
+    .ml-block p {
+      font-size: .9rem; color: var(--text-muted); line-height: 1.85;
+      margin-bottom: .8rem;
+    }
+    .ml-block p:last-child { margin-bottom: 0; }
+    .ml-block strong { color: var(--text); font-weight: 600; }
+    .ml-block a { color: var(--or-light); text-decoration: none; }
+    .ml-block a:hover { text-decoration: underline; }
+
+    .ml-row {
+      display: flex; flex-direction: column; gap: .5rem;
+      margin-bottom: .8rem;
+    }
+    .ml-row:last-child { margin-bottom: 0; }
+    .ml-row dt { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--or-light); }
+    .ml-row dd { font-size: .9rem; color: var(--text-muted); }
+
+    .placeholder {
+      display: inline-block;
+      background: rgba(216,179,138,0.12); color: var(--or-light);
+      border: 1px dashed rgba(216,179,138,0.4);
+      border-radius: 6px; padding: .1rem .5rem;
+      font-size: .85rem; font-style: italic;
+    }
+
+    .ml-list { display: flex; flex-direction: column; gap: .6rem; }
+    .ml-list li {
+      display: flex; align-items: flex-start; gap: .8rem;
+      font-size: .9rem; color: var(--text-muted); line-height: 1.6;
+      list-style: none;
+    }
+    .ml-list li::before {
+      content: ''; display: block; width: 5px; height: 5px; min-width: 5px;
+      border-radius: 50%; background: var(--or); margin-top: .55rem;
+    }
+
+    .page-footer {
+      background: #0c0b08; border-top: 1px solid var(--border);
+      padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; color: var(--text-muted);
+    }
+    .page-footer a { color: var(--text-muted); text-decoration: none; }
+    .page-footer a:hover { color: var(--or-light); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 8rem 1.5rem 3rem; }
+      .content { padding: 3rem 1.5rem 5rem; }
+      .ml-block { padding: 1.6rem 1.5rem; }
+      .page-footer { flex-direction: column; gap: .6rem; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="PUR Réflexe">
+      <svg viewBox="0 0 196 52" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="ng" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#e8c9a0"/><stop offset="100%" stop-color="#b8956b"/></radialGradient></defs>
+        <circle cx="26" cy="26" r="26" fill="url(#ng)"/>
+        <path d="M26,8 C42,17 43,33 26,47 C9,33 10,17 26,8 Z" fill="white"/>
+        <ellipse cx="20" cy="20" rx="4" ry="6" fill="white" opacity="0.32" transform="rotate(-18,20,20)"/>
+        <text x="62" y="35" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="28" fill="white" letter-spacing="3">PUR</text>
+        <text x="63" y="48" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="8" fill="#D8B38A" letter-spacing="3.2">RÉFLEXE</text>
+      </svg>
+    </a>
+    <a class="nav-back" href="index.html">Retour au site</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-label">
+      <a href="index.html">Accueil</a><span>/</span>
+      Mentions légales
+    </div>
+    <h1>Mentions légales</h1>
+    <p class="hero-intro">Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, les présentes mentions légales sont portées à la connaissance des utilisateurs du site PUR Réflexe.</p>
+  </section>
+
+  <div class="content">
+
+    <!-- ÉDITEUR -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Éditeur du site
+      </h2>
+      <dl>
+        <div class="ml-row">
+          <dt>Raison sociale</dt>
+          <dd>Agence Viau E-Commerce</dd>
+        </div>
+        <div class="ml-row">
+          <dt>Forme juridique</dt>
+          <dd>Entrepreneur individuel — Micro-entreprise</dd>
+        </div>
+        <div class="ml-row">
+          <dt>SIRET</dt>
+          <dd>950 754 051 00015</dd>
+        </div>
+        <div class="ml-row">
+          <dt>Code APE</dt>
+          <dd>8121Z</dd>
+        </div>
+        <div class="ml-row">
+          <dt>TVA</dt>
+          <dd>Non assujetti à la TVA — Franchise en base de TVA (article 293 B du CGI)</dd>
+        </div>
+        <div class="ml-row">
+          <dt>Siège social</dt>
+          <dd>24 rue Richard Wagner, 76000 Rouen, France</dd>
+        </div>
+        <div class="ml-row">
+          <dt>Email</dt>
+          <dd><a href="mailto:contact@purreflexe.fr">contact@purreflexe.fr</a></dd>
+        </div>
+        <div class="ml-row">
+          <dt>Directeur de la publication</dt>
+          <dd>Jean-Christophe Viau</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- HÉBERGEUR -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        Hébergement
+      </h2>
+      <dl>
+        <div class="ml-row">
+          <dt>Hébergeur</dt>
+          <dd>Netlify, Inc.</dd>
+        </div>
+        <div class="ml-row">
+          <dt>Adresse</dt>
+          <dd>44 Montgomery Street, Suite 300, San Francisco, CA 94104, États-Unis</dd>
+        </div>
+        <div class="ml-row">
+          <dt>Site</dt>
+          <dd><a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- PROPRIÉTÉ INTELLECTUELLE -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 1 1 0-5.66"/></svg>
+        Propriété intellectuelle
+      </h2>
+      <p>L'ensemble du contenu de ce site — textes, visuels, logos, icônes, photos, structure et charte graphique — est la propriété exclusive de <strong>PUR Réflexe</strong> et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
+      <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de PUR Réflexe.</p>
+      <p>La marque <strong>PUR Réflexe</strong> ainsi que les logos associés sont des marques déposées. Toute utilisation sans autorisation expresse est strictement interdite.</p>
+    </div>
+
+    <!-- DONNÉES PERSONNELLES / RGPD -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Protection des données personnelles (RGPD)
+      </h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD) n° 2016/679 et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez des droits suivants sur vos données personnelles :</p>
+      <ul class="ml-list">
+        <li><strong>Droit d'accès</strong> — consulter les données vous concernant</li>
+        <li><strong>Droit de rectification</strong> — corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données</li>
+        <li><strong>Droit d'opposition</strong> — vous opposer au traitement de vos données</li>
+        <li><strong>Droit à la portabilité</strong> — récupérer vos données dans un format lisible</li>
+        <li><strong>Droit à la limitation</strong> — limiter le traitement de vos données</li>
+      </ul>
+      <p style="margin-top:1rem;">Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@purreflexe.fr">contact@purreflexe.fr</a></p>
+      <p>Les données collectées lors d'une commande (nom, adresse, email) sont utilisées exclusivement pour le traitement et la livraison de votre commande. Elles ne sont jamais revendues à des tiers.</p>
+      <p>En cas de réclamation, vous pouvez contacter la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></p>
+    </div>
+
+    <!-- COOKIES -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/></svg>
+        Cookies
+      </h2>
+      <p>Ce site peut utiliser des cookies techniques nécessaires à son bon fonctionnement (session de navigation, panier). Aucun cookie publicitaire ou de traçage tiers n'est utilisé sans votre consentement préalable.</p>
+      <p>Vous pouvez configurer votre navigateur pour refuser les cookies. Certaines fonctionnalités du site pourraient alors être limitées.</p>
+    </div>
+
+    <!-- RESPONSABILITÉ -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Limitation de responsabilité
+      </h2>
+      <p>PUR Réflexe s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Cependant, PUR Réflexe ne peut garantir l'exhaustivité ni l'absence d'erreur des informations présentes.</p>
+      <p>PUR Réflexe décline toute responsabilité pour tout dommage direct ou indirect résultant de l'utilisation du site ou des informations qui y sont contenues.</p>
+      <p>Les résultats présentés sur ce site (efficacité du produit, compatibilité textile) sont indicatifs. Un test sur zone discrète est recommandé avant toute utilisation sur des textiles délicats.</p>
+    </div>
+
+    <!-- DROIT APPLICABLE -->
+    <div class="ml-block">
+      <h2>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3l-7 2a3 3 0 0 0-5 1v7a3 3 0 0 0 5 1l7 2a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/></svg>
+        Droit applicable et juridiction
+      </h2>
+      <p>Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>
+      <p>Dernière mise à jour : <strong>mai 2026</strong></p>
+    </div>
+
+  </div>
+
+  <footer class="page-footer">
+    <span>© 2026 PUR Réflexe. Tous droits réservés.</span>
+    <span>
+      <a href="index.html">Accueil</a> &nbsp;·&nbsp;
+      <a href="precautions.html">Précautions</a> &nbsp;·&nbsp;
+      <a href="cgv.html">CGV</a> &nbsp;·&nbsp;
+      <a href="mentions-legales.html">Mentions légales</a>
+    </span>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Composition Simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --or:         #D8B38A; --or-light:   #e8c9a0; --or-dim:     #2a2015;
+      --bg:         #12110e; --bg-alt:     #17160d; --card:       #1d1c16;
+      --border: rgba(255,255,255,0.07); --text:       #F3EEE7; --text-muted: #8a7e6e;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(18,17,14,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; transition: opacity .2s; }
+    .nav-logo:hover { opacity: .8; }
+    .nav-back {
+      display: flex; align-items: center; gap: .5rem; text-decoration: none;
+      color: var(--text-muted); font-size: .82rem; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase; transition: color .2s;
+    }
+    .nav-back:hover { color: var(--or-light); }
+    .nav-back::before { content: '←'; font-size: 1rem; }
+
+    .hero {
+      min-height: 70vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10rem 4rem 5rem; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse 70% 80% at 50% 30%, rgba(216,179,138,0.14) 0%, transparent 65%), var(--bg);
+    }
+    .hero-bg-text {
+      position: absolute; bottom: -2rem; left: -1rem;
+      font-family: 'Playfair Display', serif; font-size: clamp(8rem, 18vw, 18rem);
+      font-weight: 700; color: rgba(216,179,138,0.04); line-height: 1;
+      white-space: nowrap; pointer-events: none; user-select: none;
+    }
+    .hero-label { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--or-light); margin-bottom: 1rem; }
+    .hero-label a { color: var(--text-muted); text-decoration: none; }
+    .hero-label a:hover { color: var(--or-light); }
+    .hero-label span { margin: 0 .5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; line-height: 1.05; color: #fff; max-width: 800px; margin-bottom: 1.5rem; }
+    .hero h1 em { color: var(--or-light); font-style: normal; }
+    .hero-intro { font-size: 1.15rem; color: var(--text-muted); font-weight: 300; line-height: 1.8; max-width: 600px; }
+
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .kpi { padding: 3rem 2.5rem; border-right: 1px solid var(--border); position: relative; overflow: hidden; }
+    .kpi:last-child { border-right: none; }
+    .kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--or), transparent); }
+    .kpi-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: .4rem; }
+    .kpi-num span { font-size: 1.8rem; color: var(--or-light); }
+    .kpi-label { font-size: .85rem; color: var(--text-muted); line-height: 1.5; }
+
+    .section { padding: 6rem 4rem; }
+    .section-alt { background: var(--bg-alt); }
+    .section-label { font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--or-light); margin-bottom: .8rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.2; color: #fff; margin-bottom: 1.2rem; }
+    .section-text { font-size: 1rem; color: var(--text-muted); line-height: 1.85; max-width: 560px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+    /* INGRÉDIENTS GRANDS CARDS */
+    .ingr-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .ingr-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+      padding: 1.8rem 2rem; display: flex; gap: 1.5rem; align-items: flex-start;
+      transition: border-color .2s, transform .2s;
+    }
+    .ingr-card:hover { border-color: rgba(216,179,138,0.5); transform: translateX(6px); }
+    .ingr-num {
+      font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+      color: rgba(216,179,138,0.3); line-height: 1; min-width: 2rem;
+    }
+    .ingr-title { font-weight: 600; font-size: 1rem; color: #fff; margin-bottom: .4rem; }
+    .ingr-role {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; background: var(--or-dim); color: var(--or-light);
+      padding: .2rem .7rem; border-radius: 100px; margin-bottom: .6rem;
+    }
+    .ingr-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* CE QUE NOUS N'UTILISONS PAS */
+    .no-list { display: flex; flex-direction: column; gap: .8rem; }
+    .no-item {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1rem 1.4rem; font-size: .88rem; color: var(--text-muted);
+    }
+    .no-item::before { content: '✕'; color: #c0392b; font-weight: 700; font-size: 1rem; min-width: 1.2rem; }
+
+    /* PHILOSOPHIE */
+    .phil-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+    .phil-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 2rem 1.6rem; text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .phil-card:hover { border-color: rgba(216,179,138,0.5); transform: translateY(-4px); }
+    .ph-icon { font-size: 2.2rem; display: block; margin-bottom: 1rem; }
+    .ph-title { font-weight: 600; font-size: .95rem; color: #fff; margin-bottom: .5rem; }
+    .ph-desc { font-size: .82rem; color: var(--text-muted); line-height: 1.7; }
+
+    .cta-section {
+      padding: 6rem 4rem; text-align: center;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(216,179,138,0.1) 0%, transparent 70%), var(--bg);
+    }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: #fff; margin-bottom: 1rem; }
+    .cta-section p { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--or); color: #fff; padding: 1rem 2.5rem; border-radius: 100px;
+      font-weight: 600; font-size: .95rem; text-decoration: none;
+      transition: background .25s, transform .2s; box-shadow: 0 4px 24px rgba(216,179,138,0.4);
+    }
+    .btn-primary:hover { background: #c9a070; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: transparent; color: var(--text); padding: 1rem 2.5rem; border-radius: 100px;
+      font-weight: 500; font-size: .95rem; text-decoration: none;
+      border: 1.5px solid var(--border); margin-left: 1rem;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--or); color: var(--or-light); }
+
+    .page-footer {
+      background: #0c0b08; border-top: 1px solid var(--border);
+      padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; color: var(--text-muted);
+    }
+    .page-footer a { color: var(--text-muted); text-decoration: none; }
+    .page-footer a:hover { color: var(--or-light); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 8rem 1.5rem 4rem; }
+      .section { padding: 4rem 1.5rem; }
+      .kpis { grid-template-columns: 1fr; }
+      .kpi { border-right: none; border-bottom: 1px solid var(--border); }
+      .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .phil-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 4rem 1.5rem; }
+      .btn-ghost { margin-left: 0; margin-top: .8rem; }
+      .page-footer { flex-direction: column; gap: .6rem; text-align: center; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="PUR FlashClean">
+      <svg viewBox="0 0 196 52" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="ng" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#e8c9a0"/><stop offset="100%" stop-color="#b8956b"/></radialGradient></defs>
+        <circle cx="26" cy="26" r="26" fill="url(#ng)"/>
+        <path d="M26,8 C42,17 43,33 26,47 C9,33 10,17 26,8 Z" fill="white"/>
+        <ellipse cx="20" cy="20" rx="4" ry="6" fill="white" opacity="0.32" transform="rotate(-18,20,20)"/>
+        <text x="62" y="35" font-family="'Playfair Display',Georgia,serif" font-weight="700" font-size="28" fill="white" letter-spacing="3">PUR</text>
+        <text x="63" y="48" font-family="'Space Grotesk',Arial,sans-serif" font-weight="500" font-size="8" fill="#D8B38A" letter-spacing="3.2">RÉFLEXE</text>
+      </svg>
+    </a>
+    <a class="nav-back" href="index.html#description">Le produit</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-text">Simplicité.</div>
+    <div class="hero-label reveal">
+      <a href="index.html">Accueil</a><span>/</span>
+      <a href="index.html#description">Le produit</a><span>/</span>
+      Composition simple
+    </div>
+    <h1 class="reveal">Seulement ce qui est <em>nécessaire</em></h1>
+    <p class="hero-intro reveal">
+      Chez PUR, nous croyons que la meilleure formule est celle qui contient le moins d'ingrédients possible — et les meilleurs. 4 actifs, zéro superflu.
+    </p>
+  </section>
+
+  <div class="kpis">
+    <div class="kpi reveal"><div class="kpi-num">4<span> actifs</span></div><div class="kpi-label">Seulement 4 ingrédients<br>dans la formule</div></div>
+    <div class="kpi reveal"><div class="kpi-num">0<span> ajout</span></div><div class="kpi-label">Aucun conservateur,<br>colorant ou parfum inutile</div></div>
+    <div class="kpi reveal"><div class="kpi-num">100<span>%</span></div><div class="kpi-label">Transparence<br>sur la composition</div></div>
+  </div>
+
+  <section class="section">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="section-label">Nos 4 ingrédients</div>
+        <h2 class="section-title">Une liste courte,<br>un résultat complet</h2>
+        <p class="section-text">Chaque ingrédient a un rôle précis. Nous ne cachons rien derrière des noms compliqués — voici exactement ce que contient FlashClean™ et pourquoi.</p>
+      </div>
+      <div class="ingr-grid reveal">
+        <div class="ingr-card">
+          <div class="ingr-num">01</div>
+          <div>
+            <div class="ingr-role">Nettoyant principal</div>
+            <div class="ingr-title">Agents de surface</div>
+            <div class="ingr-desc">Réduisent la tension entre l'eau et la saleté pour décrocher les particules des fibres et les rendre solubles.</div>
+          </div>
+        </div>
+        <div class="ingr-card">
+          <div class="ingr-num">02</div>
+          <div>
+            <div class="ingr-role">Actif biologique</div>
+            <div class="ingr-title">Enzymes</div>
+            <div class="ingr-desc">Protéines naturelles qui catalysent la dégradation des taches organiques (graisses, protéines, amidon) en fragments éliminables.</div>
+          </div>
+        </div>
+        <div class="ingr-card">
+          <div class="ingr-num">03</div>
+          <div>
+            <div class="ingr-role">Booster</div>
+            <div class="ingr-title">Agents nettoyants</div>
+            <div class="ingr-desc">Amplifient l'action des agents de surface sur les taches grasses et résistantes. Complètent le spectre d'action de la formule.</div>
+          </div>
+        </div>
+        <div class="ingr-card">
+          <div class="ingr-num">04</div>
+          <div>
+            <div class="ingr-role">Vecteur</div>
+            <div class="ingr-title">Eau</div>
+            <div class="ingr-desc">Support neutre qui assure la dispersion homogène de tous les actifs et facilite le rinçage après tamponnage.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="section-label">Transparence</div>
+        <h2 class="section-title">Ce que nous<br>n'utilisons pas</h2>
+        <p class="section-text">Beaucoup de détachants contiennent des ingrédients inutiles, voire problématiques. Voici ce que FlashClean™ refuse d'intégrer — et pourquoi.</p>
+      </div>
+      <div class="no-list reveal">
+        <div class="no-item">Parfums de synthèse — irritants et masquants</div>
+        <div class="no-item">Colorants artificiels — aucune utilité fonctionnelle</div>
+        <div class="no-item">Chlore & javel — agressifs pour les fibres et les couleurs</div>
+        <div class="no-item">Phosphates — nocifs pour l'environnement aquatique</div>
+        <div class="no-item">Parabènes — conservateurs controversés</div>
+        <div class="no-item">Solvants chlorés — toxiques et non nécessaires</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="section-label">Notre philosophie</div>
+      <h2 class="section-title">La pureté comme standard</h2>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <span class="ph-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="19" y1="19" x2="15.5" y2="15.5"/></svg></span>
+        <div class="ph-title">Lisible</div>
+        <div class="ph-desc">Chaque ingrédient a un nom que vous pouvez comprendre. Pas de codes E obscurs, pas de terminologie cachée.</div>
+      </div>
+      <div class="phil-card reveal">
+        <span class="ph-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="20"/><path d="M3 21h18"/><path d="M5 8H3l3.5 7c.4 1 1.8 1.8 3.5 1.8s3.1-.8 3.5-1.8L17 8h-2"/><line x1="5" y1="8" x2="19" y2="8"/></svg></span>
+        <div class="ph-title">Équilibré</div>
+        <div class="ph-desc">4 actifs soigneusement dosés pour une efficacité maximale avec un minimum d'impact sur les fibres et l'environnement.</div>
+      </div>
+      <div class="phil-card reveal">
+        <span class="ph-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D8B38A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 9-9s8 3.5 8 7.5c0 2-1 4.5-3 6-2.5 2-4 1.5-7 2.5Z"/><path d="M4 21l7-7"/></svg></span>
+        <div class="ph-title">Responsable</div>
+        <div class="ph-desc">Une formule courte, c'est aussi moins de déchets chimiques dans les eaux usées. Simple à fabriquer, simple à rincer.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;display:flex">FlashClean™</div>
+      <h2>4 ingrédients.<br>Une promesse tenue.</h2>
+      <p>Consultez toutes les informations produit<br>pour en savoir plus sur FlashClean™.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="index.html#composition" class="btn-primary">Voir la composition →</a>
+        <a href="index.html" class="btn-ghost">Retour au site</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span>© 2026 PUR Réflexe — FlashClean™</span>
+    <span>
+      <a href="index.html#description">Le produit</a> &nbsp;·&nbsp;
+      <a href="index.html#composition">Composition</a> &nbsp;·&nbsp;
+      <a href="index.html#precautions">Précautions</a>
+    </span>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+

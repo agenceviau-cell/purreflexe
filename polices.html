@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>PUR Réflexe — Essais polices FlashClean™</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&family=DM+Sans:wght@300;400&family=Space+Grotesk:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Josefin+Sans:wght@100;200&family=Bebas+Neue&family=Raleway:wght@200;300&family=Outfit:wght@300;400&family=DM+Mono:wght@300&family=Tenor+Sans&family=Jost:wght@200;300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #12110e;
+      color: #dde4d8;
+      font-family: 'Inter', sans-serif;
+      padding: 3rem 2rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #D8B38A;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+    }
+    .subtitle {
+      font-size: .8rem;
+      color: #4a5f48;
+      margin-bottom: 3rem;
+      letter-spacing: .05em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #17160d;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 2.8rem 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      transition: border-color .2s;
+      cursor: pointer;
+    }
+    .card:hover { border-color: #D8B38A; }
+
+    .card-title {
+      line-height: 1.1;
+    }
+
+    .pur {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #D8B38A;
+      display: block;
+      line-height: 1;
+    }
+
+    .flash { display: block; line-height: 1.1; }
+
+    /* ── Polices ── */
+    .f1  { font-family: 'Inter', sans-serif;            font-size: 2.4rem; font-weight: 300; }
+    .f2  { font-family: 'DM Sans', sans-serif;          font-size: 2.4rem; font-weight: 300; }
+    .f3  { font-family: 'Space Grotesk', sans-serif;    font-size: 2.2rem; font-weight: 300; }
+    .f4  { font-family: 'Cormorant Garamond', serif;    font-size: 3rem;   font-weight: 300; font-style: italic; }
+    .f5  { font-family: 'Josefin Sans', sans-serif;     font-size: 2.2rem; font-weight: 100; letter-spacing: .15em; }
+    .f6  { font-family: 'Bebas Neue', sans-serif;       font-size: 3rem;   font-weight: 400; letter-spacing: .08em; }
+    .f7  { font-family: 'Raleway', sans-serif;          font-size: 2.4rem; font-weight: 200; letter-spacing: .06em; }
+    .f8  { font-family: 'Outfit', sans-serif;           font-size: 2.3rem; font-weight: 300; }
+    .f9  { font-family: 'DM Mono', monospace;           font-size: 1.9rem; font-weight: 300; }
+    .f10 { font-family: 'Tenor Sans', sans-serif;       font-size: 2.3rem; font-weight: 400; }
+    .f11 { font-family: 'Jost', sans-serif;             font-size: 2.4rem; font-weight: 200; letter-spacing: .04em; }
+    .f12 { font-family: 'Playfair Display', serif;      font-size: 2.4rem; font-weight: 700; font-style: italic; }
+
+    .card-meta {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .font-name {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #4a5f48;
+    }
+    .font-mood {
+      font-size: .72rem;
+      color: #3a4f38;
+      letter-spacing: .04em;
+    }
+
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PUR Réflexe — Essais polices</h1>
+  <p class="subtitle">Choisissez la police de "FlashClean™" qui vous plaît le plus. PUR reste en Playfair Display.</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f1" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Inter Light</span>
+        <span class="font-mood">Moderne · Épuré</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f2" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">DM Sans Light</span>
+        <span class="font-mood">Doux · Contemporain</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f3" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Space Grotesk</span>
+        <span class="font-mood">Technique · Futuriste</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f4" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Cormorant Italic</span>
+        <span class="font-mood">Raffiné · Luxe</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f5" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Josefin Sans Thin</span>
+        <span class="font-mood">Géométrique · Art déco</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f6" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Bebas Neue</span>
+        <span class="font-mood">Condensé · Impact</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f7" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Raleway ExtraLight</span>
+        <span class="font-mood">Élégant · Aérien</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f8" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Outfit Light</span>
+        <span class="font-mood">Convivial · Technique</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f9" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">DM Mono</span>
+        <span class="font-mood">Technique · Laboratoire</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f10" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Tenor Sans</span>
+        <span class="font-mood">Élégant · Éditorial</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f11" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Jost ExtraLight</span>
+        <span class="font-mood">Minimaliste · Premium</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="pur">PUR</span>
+        <span class="flash f12" style="color:#dde4d8">FlashClean™</span>
+      </div>
+      <div class="card-meta">
+        <span class="font-name">Playfair Italic</span>
+        <span class="font-mood">Même famille · Italique</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
